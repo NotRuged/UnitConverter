@@ -1,0 +1,61 @@
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.exe
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.deps.json
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.runtimeconfig.json
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.dll
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.pdb
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\HistoryView.g.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\QuizView.g.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\SettingsView.g.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner_MarkupCompile.cache
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner_MarkupCompile.lref
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\HistoryView.baml
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\QuizView.baml
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\SettingsView.baml
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.g.resources
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.AssemblyInfoInputs.cache
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.AssemblyInfo.cs
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.csproj.CoreCompileInputs.cache
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.dll
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\refint\MVVM_Einheitenumrechner.dll
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.pdb
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.genruntimeconfig.cache
+C:\Users\Besitzer\Documents\Systemtechnik\5-6 Semester\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\ref\MVVM_Einheitenumrechner.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.exe
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.deps.json
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.runtimeconfig.json
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\MVVM_Einheitenumrechner.pdb
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\HistoryView.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\UnitView.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\App.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner_MarkupCompile.cache
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner_MarkupCompile.lref
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MainWindow.baml
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\HistoryView.baml
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\UnitView.baml
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.g.resources
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.GeneratedMSBuildEditorConfig.editorconfig
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.AssemblyInfoInputs.cache
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.AssemblyInfo.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.csproj.CoreCompileInputs.cache
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\refint\MVVM_Einheitenumrechner.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.pdb
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.genruntimeconfig.cache
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\ref\MVVM_Einheitenumrechner.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\SettingView.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\Views\SettingView.baml
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Einheitenumrechner.csproj.AssemblyReference.cache
+E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\obj\Debug\net8.0-windows\MVVM_Ein.84E58B18.Up2Date

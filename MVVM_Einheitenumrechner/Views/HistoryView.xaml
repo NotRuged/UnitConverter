@@ -1,0 +1,20 @@
+﻿<Window x:Class="MVVM_Einheitenumrechner.Views.HistoryView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
+        mc:Ignorable="d"
+        Title="HistoryView" Height="450" Width="800">
+    <DataGrid ItemsSource="{Binding HistoryEntries}" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Zeitpunkt" Binding="{Binding Timestamp}" Width="150"/>
+            <DataGridTextColumn Header="Kategorie" Binding="{Binding CategoryName}" Width="100"/>
+            <DataGridTextColumn Header="Von" Binding="{Binding FromUnit}" Width="100"/>
+            <DataGridTextColumn Header="Nach" Binding="{Binding ToUnit}" Width="100"/>
+            <DataGridTextColumn Header="Eingabewert" Binding="{Binding InputValue}" Width="100"/>
+            <DataGridTextColumn Header="Ergebnis" Binding="{Binding ResultValue}" Width="100"/>
+        </DataGrid.Columns>
+    </DataGrid>
+
+</Window>

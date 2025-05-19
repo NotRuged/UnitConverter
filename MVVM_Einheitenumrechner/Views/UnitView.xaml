@@ -1,0 +1,128 @@
+﻿<Window x:Class="MVVM_Einheitenumrechner.Views.TestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
+        xmlns:vm="clr-namespace:MVVM_Einheitenumrechner.ViewModel"
+        mc:Ignorable="d"
+        Title="Einheitenumrechner" Height="450" Width="800"
+        Background="#F4F6F8" Padding="20">
+
+    <Window.DataContext>
+        <vm:UnitViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titel -->
+        <TextBlock Text="Einheitenumrechner"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   Foreground="#2F4F4F"
+                   Margin="0,0,0,30" 
+                   HorizontalAlignment="Center"/>
+
+        <!-- Inhalt -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+
+            <!-- Kategorie -->
+            <ComboBox ItemsSource="{Binding Categories}"
+          SelectedItem="{Binding SelectedCategory}"
+          DisplayMemberPath="CategoryName" 
+          ToolTip="Wähle eine Kategorie"
+          Width="250" Height="35" Margin="0,0,0,10"
+          Background="#ffffff"
+          BorderBrush="#B0B0B0"
+          BorderThickness="1"
+          FontSize="16"
+          Padding="5"
+          VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#2F4F4F"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+
+
+            <ComboBox ItemsSource="{Binding AvailableUnits}"
+          SelectedItem="{Binding FromUnit}"
+          DisplayMemberPath="Unit"   
+                ToolTip="Ursprungseinheit"
+          Width="250" Height="35" Margin="0,0,0,10"
+          Background="#ffffff"
+          BorderBrush="#B0B0B0"
+          BorderThickness="1"
+          FontSize="16"
+          Padding="5"
+          VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#2F4F4F"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+
+            <ComboBox ItemsSource="{Binding AvailableUnits}"
+          SelectedItem="{Binding ToUnit}"
+          DisplayMemberPath="Unit"   
+                ToolTip="Zieleinheit"
+          Width="250" Height="35" Margin="0,0,0,20"
+          Background="#ffffff"
+          BorderBrush="#B0B0B0"
+          BorderThickness="1"
+          FontSize="16"
+          Padding="5"
+          VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#2F4F4F"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+
+            <TextBox Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" 
+         VerticalAlignment="Top" 
+         HorizontalAlignment="Center" 
+         Width="250" 
+         Height="35" 
+         Margin="0,0,0,10"
+         FontSize="16"
+         Padding="5"
+         Background="#ffffff"
+         BorderBrush="#B0B0B0"
+         BorderThickness="1"
+         VerticalContentAlignment="Center" 
+         HorizontalContentAlignment="Center"
+         ToolTip="Gib den Wert ein, der umgerechnet werden soll"/>
+
+            <TextBox Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}" 
+         VerticalAlignment="Top" 
+         HorizontalAlignment="Center" 
+         Width="250" 
+         Height="35" 
+         Margin="0,0,0,10" 
+         FontSize="16"
+         Padding="5"
+         Background="#ffffff"
+         BorderBrush="#B0B0B0"
+         BorderThickness="1"
+         VerticalContentAlignment="Center" 
+         HorizontalContentAlignment="Center"
+         ToolTip="Ergebnis der Umrechnung"/>
+
+
+            <Button Content="Verlauf anzeigen"
+Width="250"
+Height="35"
+Margin="0,10,0,0"
+FontSize="16"
+Background="#2F4F4F"
+Foreground="White"
+Click="ShowHistory_Click" />
+            
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>
