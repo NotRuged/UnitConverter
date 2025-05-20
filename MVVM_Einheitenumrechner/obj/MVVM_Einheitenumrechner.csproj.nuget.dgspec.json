@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\1AAA_Systemtechnik\\Programmieren\\MVVM-Projekt\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj": {}
+    "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj": {}
   },
   "projects": {
-    "E:\\1AAA_Systemtechnik\\Programmieren\\MVVM-Projekt\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj": {
+    "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\1AAA_Systemtechnik\\Programmieren\\MVVM-Projekt\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj",
+        "projectUniqueName": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj",
         "projectName": "MVVM_Einheitenumrechner",
-        "projectPath": "E:\\1AAA_Systemtechnik\\Programmieren\\MVVM-Projekt\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj",
-        "packagesPath": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\.nuget\\packages\\",
-        "outputPath": "E:\\1AAA_Systemtechnik\\Programmieren\\MVVM-Projekt\\MVVM_Einheitenumrechner\\obj\\",
+        "projectPath": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MVVM_Einheitenumrechner.csproj",
+        "packagesPath": "C:\\Users\\Besitzer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andre.DESKTOP-OIR8S4A\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Besitzer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

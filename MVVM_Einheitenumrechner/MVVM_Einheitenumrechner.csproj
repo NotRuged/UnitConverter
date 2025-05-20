@@ -9,11 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\Button1.png" />
+    <None Remove="Images\StartPage.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Button1.png" />
+    <Resource Include="Images\StartPage.png" />
   </ItemGroup>
 
 </Project>

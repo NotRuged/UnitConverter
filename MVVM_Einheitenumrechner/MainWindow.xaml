@@ -10,8 +10,9 @@
 
     <Grid>
         <!-- Hintergrundbild -->
-        <Image Source="E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\Images\StartPage.png" Stretch="Fill" />
+        <Image Source="Images/StartPage.png" Stretch="Fill" />
 
+      
         <!-- Overlay für Text und Button -->
         <Grid>
             <!-- Text links oben -->
@@ -46,7 +47,8 @@
         Margin="10"
         Click="OpenUnitView_Click"
         Background="Transparent"
-        BorderThickness="0">
+        BorderThickness="0"
+                             ToolTip="Klicke den Button, um zur Umrechnungs-Ansicht zu kommen">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -56,8 +58,8 @@
                     </ControlTemplate>
                 </Button.Template>
 
-                <Image Source="E:\1AAA_Systemtechnik\Programmieren\MVVM-Projekt\MVVM_Einheitenumrechner\Images\Button1.png"
-           Stretch="Uniform"/>
+                <Image Source="Images/Button1.png"
+                Stretch="Uniform"/>
 
                 <Button.Effect>
                     <DropShadowEffect Color="Black"
@@ -66,9 +68,61 @@
                           BlurRadius="10"
                           Opacity="0.4"/>
                 </Button.Effect>
+                
             </Button>
 
+            <StackPanel Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="0,0,0,0"
+            >
 
+                <!-- KM-Eingabefeld (links der Mitte) -->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="175">
+                    <TextBlock Text="Kilometer"
+                   FontSize="32"
+                   FontWeight="Bold">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#70C1B3" Offset="0.0" />
+                                <GradientStop Color="#43A047" Offset="0.5" />
+                                <GradientStop Color="#00838F" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+
+                <!-- Pfeil oder Platzhalter -->
+                <TextBlock Text="→"
+               FontSize="32"
+               VerticalAlignment="Center"
+               Margin="10,0">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#70C1B3" Offset="0.0" />
+                            <GradientStop Color="#43A047" Offset="0.5" />
+                            <GradientStop Color="#00838F" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+
+                <!-- Meter-Ausgabe (rechts der Mitte) -->
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="150">
+                    <TextBlock Text="Meter"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,5">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#70C1B3" Offset="0.0" />
+                                <GradientStop Color="#43A047" Offset="0.5" />
+                                <GradientStop Color="#00838F" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
 
         </Grid>
     </Grid>

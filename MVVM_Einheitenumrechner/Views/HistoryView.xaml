@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
         mc:Ignorable="d"
         Title="HistoryView" Height="450" Width="800">
-    <DataGrid ItemsSource="{Binding HistoryEntries}" AutoGenerateColumns="False" IsReadOnly="True">
+    <DataGrid ItemsSource="{Binding HistoryEntries}" Foreground="#2F4F4F" AutoGenerateColumns="False" IsReadOnly="True" Background="#fef3e1">
         <DataGrid.Columns>
             <DataGridTextColumn Header="Zeitpunkt" Binding="{Binding Timestamp}" Width="150"/>
             <DataGridTextColumn Header="Kategorie" Binding="{Binding CategoryName}" Width="100"/>
