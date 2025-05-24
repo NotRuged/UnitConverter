@@ -7,33 +7,43 @@
         xmlns:vm="clr-namespace:MVVM_Einheitenumrechner.ViewModel"
         mc:Ignorable="d"
         Title="Einheitenumrechner" Height="450" Width="800"
-        Background="#F4F6F8" Padding="20">
+        Background="#FEF3E1" Padding="20">
 
     <Window.DataContext>
         <vm:UnitViewModel />
     </Window.DataContext>
 
-    <Grid Background="#fef3e1">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Titel -->
-        <TextBlock Text="Einheitenumrechner"
-           FontSize="32"
-           FontWeight="Bold"
-           Margin="0,0,0,30" 
-           HorizontalAlignment="Center">
-            <TextBlock.Foreground>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#70C1B3" Offset="0.0" />
-                    <GradientStop Color="#43A047" Offset="0.5" />
-                    <GradientStop Color="#00838F" Offset="1.0" />
-                </LinearGradientBrush>
-            </TextBlock.Foreground>
-        </TextBlock>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
+            <TextBlock Text="Einheitenumrechner"
+                     FontSize="32"
+                     FontWeight="Bold"
+                     Foreground="#2F4F4F"
+                     Margin="0,0,0,30"
+                     HorizontalAlignment="Left"/>
+
+            <Button Content="Edit"
+                  Width="80"
+                  Height="30"
+                  Margin="0,0,0,30"
+                  Grid.Column="1"
+                  VerticalAlignment="Top"
+                  Background="#4CAF50"
+                  Foreground="White"
+                  FontWeight="Bold"
+                  Cursor="Hand"
+                  Click="EditButton_Click"/>
+        </Grid>
 
         <!-- Inhalt -->
         <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">

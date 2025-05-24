@@ -26,5 +26,12 @@ namespace MVVM_Einheitenumrechner.Views
             DataContext = new HistoryViewModel();
 
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestView testView = new TestView();
+            testView.Show();
+            this.Close();
+        }
     }
 }

@@ -30,6 +30,12 @@ namespace MVVM_Einheitenumrechner.Views
             historyWindow.Show();
         }
 
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsWindow = new SettingView();
+            settingsWindow.ShowDialog();
+            this.Close();
+        }
 
     }
 }

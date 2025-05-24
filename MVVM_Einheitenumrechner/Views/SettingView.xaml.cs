@@ -23,5 +23,11 @@ namespace MVVM_Einheitenumrechner.Views
         {
             InitializeComponent();
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestView testView = new TestView();
+            testView.Show();
+            this.Close();
+        }
     }
 }

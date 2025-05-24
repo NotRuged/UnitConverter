@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
         mc:Ignorable="d"
-        Title="SettingView" Height="450" Width="800">
-    <Grid>
-        
+        Title="SettingView" Height="450" Width="800" Background="#FEF3E1">
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="← Back"
+                Width="80"
+                Height="30"
+                Click="BackButton_Click"
+                Background="#DDDDDD"
+                Foreground="Black"
+                FontWeight="Bold"
+                Margin="0,0,10,0"
+                BorderThickness="0"
+                Cursor="Hand"/>
+
+            <TextBlock Grid.Column="1"
+                   Text="SETTINGS"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+            <!-- Reload Icon -->
+            <Image Grid.Column="2"
+               Source="/Images/StartPage.png"
+               Width="50"
+               Height="50"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Right"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1"
+                Width="300"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left">
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="CategoryName"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,5"/>
+                <TextBox Text="{Binding CategoryName}"
+                     Background="#E0E0E0"
+                     BorderThickness="0"
+                     Height="30"
+                     Padding="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10">
+                <TextBlock Text="Unit"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Unit}"
+                     Background="#E0E0E0"
+                     BorderThickness="0"
+                     Height="30"
+                     Padding="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,20">
+                <TextBlock Text="Factor"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Factor}"
+                     Background="#E0E0E0"
+                     BorderThickness="0"
+                     Height="30"
+                     Padding="5"/>
+            </StackPanel>
+
+            <Button Content="Save"
+                Command="{Binding SaveCommand}"
+                Background="#4CAF50"
+                Foreground="White"
+                FontWeight="Bold"
+                Height="35"
+                Width="100"
+                HorizontalAlignment="Left"
+                Cursor="Hand"
+                BorderThickness="0"/>
+        </StackPanel>
     </Grid>
 </Window>
