@@ -28,12 +28,13 @@ namespace MVVM_Einheitenumrechner.Views
         {
             var historyWindow = new HistoryView();
             historyWindow.Show();
+            this.Close();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             var settingsWindow = new SettingView();
-            settingsWindow.ShowDialog();
+            settingsWindow.Show();
             this.Close();
         }
 

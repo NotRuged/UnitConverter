@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Timers;
 using System.Windows;
 using System.Xml.Linq;
 
@@ -13,7 +14,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
 {
     public class UnitViewModel : INotifyPropertyChanged
     {
-        private string connectionString = @"Data Source=DESKTOP-OIR8S4A\SQLEXPRESS;Trusted_Connection=yes;Database=UnitCalculator;Connection Timeout=10;";
+        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter1;Connection Timeout=10;";
 
         public ObservableCollection<Category> Categories { get; set; } = new();
         public ObservableCollection<UnitDefinition> AvailableUnits { get; set; } = new();
@@ -23,6 +24,9 @@ namespace MVVM_Einheitenumrechner.ViewModel
         private UnitDefinition _toUnit;
         private string _inputValue;
         private string _result;
+
+        // Timer für verzögertes Speichern
+        private System.Timers.Timer _saveTimer;
 
         public Category SelectedCategory
         {
@@ -65,6 +69,9 @@ namespace MVVM_Einheitenumrechner.ViewModel
                 _inputValue = value;
                 OnPropertyChanged();
                 ConvertUnits();
+
+                // Timer zurücksetzen, da neue Eingabe
+                ResetSaveTimer();
             }
         }
 
@@ -80,7 +87,31 @@ namespace MVVM_Einheitenumrechner.ViewModel
 
         public UnitViewModel()
         {
+            // Timer initialisieren: 5 Sekunden (5000 ms)
+            _saveTimer = new System.Timers.Timer(2500);
+            _saveTimer.AutoReset = false; // nur einmal auslösen
+            _saveTimer.Elapsed += SaveTimer_Elapsed;
+
             LoadCategories();
+        }
+
+        private void ResetSaveTimer()
+        {
+            _saveTimer.Stop();
+            _saveTimer.Start();
+        }
+
+        private void SaveTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            // Timer läuft im Hintergrundthread - Wechsel in UI-Thread nötig
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                if (double.TryParse(InputValue?.Replace(",", "."), System.Globalization.NumberStyles.Any,
+                                    System.Globalization.CultureInfo.InvariantCulture, out double input))
+                {
+                    SaveConversion(input, Result);
+                }
+            });
         }
 
         public void TestConnection()
@@ -89,177 +120,146 @@ namespace MVVM_Einheitenumrechner.ViewModel
             try
             {
                 connection.Open();
-                System.Windows.MessageBox.Show("Verbindung erfolgreich!");
+                //MessageBox.Show("Verbindung erfolgreich!");
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show("Verbindung fehlgeschlagen: " + ex.Message);
+                MessageBox.Show("Verbindung fehlgeschlagen: " + ex.Message);
             }
         }
 
         private void LoadCategories()
         {
-            TestConnection(); 
-            Categories.Clear();
-
-            using var connection = new SqlConnection(connectionString);
-            string query = "SELECT CategoryID, CategoryName FROM Categories";
-
             try
             {
+                TestConnection();
+                Categories.Clear();
+
+                using var connection = new SqlConnection(connectionString);
+                string query = "SELECT CategoryID, CategoryName FROM Categories";
+
                 connection.Open();
-                var command = new SqlCommand(query, connection);
-                var reader = command.ExecuteReader();
+                using var command = new SqlCommand(query, connection);
+                using var reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
                     Categories.Add(new Category
                     {
-                        CategoryID = (int)reader["CategoryID"],
-                        CategoryName = reader["CategoryName"].ToString()
+                        CategoryID = reader["CategoryID"] as int? ?? 0,
+                        CategoryName = reader["CategoryName"]?.ToString() ?? string.Empty
                     });
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                // Fehlerbehandlung z.B. Log, MessageBox ...
+                MessageBox.Show("Fehler beim Laden der Kategorien: " + ex.Message);
             }
         }
 
+
         private void LoadUnits()
         {
-            AvailableUnits.Clear();
-
-            if (SelectedCategory == null) return;
-
-            using var connection = new SqlConnection(connectionString);
-            string query = "SELECT Nr, CategoryID, Unit, Factor FROM UnitDefinitions WHERE CategoryID = @catId";
-
             try
             {
+                AvailableUnits.Clear();
+
+                if (SelectedCategory == null) return;
+
+                using var connection = new SqlConnection(connectionString);
+                string query = "SELECT Nr, CategoryID, Unit, Factor FROM UnitDefinitions WHERE CategoryID = @catId";
+
                 connection.Open();
-                var command = new SqlCommand(query, connection);
+                using var command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@catId", SelectedCategory.CategoryID);
 
-                var reader = command.ExecuteReader();
+                using var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     AvailableUnits.Add(new UnitDefinition
                     {
-                        Nr = (int)reader["Nr"],
-                        CategoryID = (int)reader["CategoryID"],
-                        Unit = reader["Unit"].ToString(),
-                        Factor = (double)reader["Factor"]
+                        Nr = reader["Nr"] as int? ?? 0,
+                        CategoryID = reader["CategoryID"] as int? ?? 0,
+                        Unit = reader["Unit"]?.ToString() ?? string.Empty,
+                        Factor = reader["Factor"] as double? ?? 1.0
                     });
                 }
 
                 FromUnit = AvailableUnits.FirstOrDefault();
                 ToUnit = AvailableUnits.Skip(1).FirstOrDefault();
             }
-            catch
+            catch (Exception ex)
             {
-                // Fehlerbehandlung
+                MessageBox.Show("Fehler beim Laden der Einheiten: " + ex.Message);
             }
         }
 
+
         private void ConvertUnits()
         {
-            if (FromUnit == null || ToUnit == null || string.IsNullOrWhiteSpace(InputValue))
+            try
             {
-                Result = "";
-                return;
-            }
-
-            if (!double.TryParse(InputValue.Replace(",", "."), System.Globalization.NumberStyles.Any,
-                                 System.Globalization.CultureInfo.InvariantCulture, out double input))
-            {
-                Result = "Ungültige Eingabe";
-                return;
-            }
-
-            // Temperatur-Umrechnung erweitern, da Fahrenheit dabei ist
-            if (SelectedCategory?.CategoryName == "Temperatur")
-            {
-                double tempInCelsius = input;
-
-                // Eingangswert in Celsius umrechnen
-                switch (FromUnit.Unit)
+                if (FromUnit == null || ToUnit == null || string.IsNullOrWhiteSpace(InputValue))
                 {
-                    case "Celsius":
-                        tempInCelsius = input;
-                        break;
-                    case "Kelvin":
-                        tempInCelsius = input - 273.15;
-                        break;
-                    case "Fahrenheit":
-                        tempInCelsius = (input - 32) * 5 / 9;
-                        break;
+                    Result = "";
+                    return;
                 }
 
-                double convertedTemp = tempInCelsius;
-
-                // Celsius in Zielwert umrechnen
-                switch (ToUnit.Unit)
+                if (!double.TryParse(InputValue.Replace(",", "."), System.Globalization.NumberStyles.Any,
+                                     System.Globalization.CultureInfo.InvariantCulture, out double input))
                 {
-                    case "Celsius":
-                        convertedTemp = tempInCelsius;
-                        break;
-                    case "Kelvin":
-                        convertedTemp = tempInCelsius + 273.15;
-                        break;
-                    case "Fahrenheit":
-                        convertedTemp = (tempInCelsius * 9 / 5) + 32;
-                        break;
+                    Result = "Ungültige Eingabe";
+                    return;
                 }
 
-                Result = $"{convertedTemp:F2} {ToUnit.Unit}";
-            }
-            else
-            {
+                // Schutz gegen Division durch Null
+                if (ToUnit.Factor == 0)
+                {
+                    Result = "Fehler: Faktor der Ziel-Einheit ist 0";
+                    return;
+                }
+
                 double baseValue = input * FromUnit.Factor;
                 double converted = baseValue / ToUnit.Factor;
 
                 Result = $"{converted:F8} {ToUnit.Unit}";
             }
-
-            // Ergebnis speichern
-            SaveConversion(input, Result);
+            catch (Exception ex)
+            {
+                Result = "Fehler bei der Umrechnung";
+                MessageBox.Show("Fehler bei der Umrechnung: " + ex.Message);
+            }
         }
+
 
         private void SaveConversion(double inputValue, string resultValue)
         {
             if (SelectedCategory == null || FromUnit == null || ToUnit == null)
                 return;
 
-            using var connection = new SqlConnection(connectionString);
-            string insertQuery = @"
-        INSERT INTO ConversionHistory 
-            (CategoryID, FromUnit, ToUnit, InputValue, ResultValue) 
-        VALUES 
-            (@CategoryID, @FromUnit, @ToUnit, @InputValue, @ResultValue)";
-
             try
             {
+                using var connection = new SqlConnection(connectionString);
+                string insertQuery = @"INSERT INTO ConversionHistory 
+                               (CategoryID, FromUnit, ToUnit, InputValue, ResultValue) 
+                               VALUES (@CategoryID, @FromUnit, @ToUnit, @InputValue, @ResultValue)";
+
                 connection.Open();
                 using var command = new SqlCommand(insertQuery, connection);
                 command.Parameters.AddWithValue("@CategoryID", SelectedCategory.CategoryID);
                 command.Parameters.AddWithValue("@FromUnit", FromUnit.Unit);
                 command.Parameters.AddWithValue("@ToUnit", ToUnit.Unit);
                 command.Parameters.AddWithValue("@InputValue", inputValue);
-                command.Parameters.AddWithValue("@ResultValue", resultValue);
+                command.Parameters.AddWithValue("@ResultValue", resultValue ?? "");
 
                 command.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
-                // Fehlerbehandlung, z.B. Logging, kann ignoriert werden, falls DB mal nicht erreichbar
+                MessageBox.Show("Fehler beim Speichern der Umrechnung: " + ex.Message);
             }
         }
 
-        private void ShowHistory_Click(object sender, RoutedEventArgs e)
-        {
-            var historyWindow = new HistoryView();
-            historyWindow.Show();
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)

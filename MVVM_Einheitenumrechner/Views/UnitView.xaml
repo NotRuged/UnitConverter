@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
         xmlns:vm="clr-namespace:MVVM_Einheitenumrechner.ViewModel"
         mc:Ignorable="d"
-        Title="Einheitenumrechner" Height="450" Width="800"
+        Title="Einheitenumrechner" Height="550" Width="900"
         Background="#FEF3E1" Padding="20">
+
 
     <Window.DataContext>
         <vm:UnitViewModel />
@@ -19,128 +20,222 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <!-- Kopfbereich mit Titel + Buttonleiste -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
 
+            <!-- Titel mit Farbverlauf -->
             <TextBlock Text="Einheitenumrechner"
-                     FontSize="32"
-                     FontWeight="Bold"
-                     Foreground="#2F4F4F"
-                     Margin="0,0,0,30"
-                     HorizontalAlignment="Left"/>
+                       FontSize="36"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,5">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#70C1B3" Offset="0.0" />
+                        <GradientStop Color="#43A047" Offset="0.5" />
+                        <GradientStop Color="#00838F" Offset="1.0" />
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
 
-            <Button Content="Edit"
-                  Width="80"
-                  Height="30"
-                  Margin="0,0,0,30"
-                  Grid.Column="1"
-                  VerticalAlignment="Top"
-                  Background="#4CAF50"
-                  Foreground="White"
-                  FontWeight="Bold"
-                  Cursor="Hand"
-                  Click="EditButton_Click"/>
-        </Grid>
+            <!-- Linie unter dem Titel -->
+            <Rectangle Height="5"
+                       Width="300"
+                       Margin="0,0,0,15"
+                       HorizontalAlignment="Center">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#70C1B3" Offset="0.0" />
+                        <GradientStop Color="#43A047" Offset="0.5" />
+                        <GradientStop Color="#00838F" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
 
-        <!-- Inhalt -->
-        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <!-- Zentriertes Buttonpanel -->
+            <WrapPanel HorizontalAlignment="Center" Margin="0,-10,0,0">
+                <Button Content="Verlauf"
+                        Width="120"
+                        Height="40"
+                        Margin="10"
+                        FontSize="16"
+                        Background="#455A64"
+                        Foreground="White"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Click="ShowHistory_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#455A64"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Padding" Value="10,5"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Opacity="0.2"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#37474F"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#263238"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
-            <!-- Kategorie -->
-            <ComboBox ItemsSource="{Binding Categories}"
-          SelectedItem="{Binding SelectedCategory}"
-          DisplayMemberPath="CategoryName" 
-          ToolTip="Wähle eine Kategorie"
-          Width="250" Height="35" Margin="0,0,0,10"
-          Background="#ffffff"
-          BorderBrush="#B0B0B0"
-          BorderThickness="1"
-          FontSize="16"
-          Padding="5"
-          VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#2F4F4F"/>
-                </ComboBox.Foreground>
-            </ComboBox>
-
-
-            <ComboBox ItemsSource="{Binding AvailableUnits}"
-          SelectedItem="{Binding FromUnit}"
-          DisplayMemberPath="Unit"   
-                ToolTip="Ursprungseinheit"
-          Width="250" Height="35" Margin="0,0,0,10"
-          Background="#ffffff"
-          BorderBrush="#B0B0B0"
-          BorderThickness="1"
-          FontSize="16"
-          Padding="5"
-          VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#2F4F4F"/>
-                </ComboBox.Foreground>
-            </ComboBox>
-
-            <ComboBox ItemsSource="{Binding AvailableUnits}"
-          SelectedItem="{Binding ToUnit}"
-          DisplayMemberPath="Unit"   
-                ToolTip="Zieleinheit"
-          Width="250" Height="35" Margin="0,0,0,20"
-          Background="#ffffff"
-          BorderBrush="#B0B0B0"
-          BorderThickness="1"
-          FontSize="16"
-          Padding="5"
-          VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#2F4F4F"/>
-                </ComboBox.Foreground>
-            </ComboBox>
-
-            <TextBox Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}" 
-         VerticalAlignment="Top" 
-         HorizontalAlignment="Center" 
-         Width="250" 
-         Height="35" 
-         Margin="0,0,0,10"
-         FontSize="16"
-         Padding="5"
-         Background="#ffffff"
-         BorderBrush="#B0B0B0"
-         BorderThickness="1"
-         VerticalContentAlignment="Center" 
-         HorizontalContentAlignment="Center"
-         ToolTip="Gib den Wert ein, der umgerechnet werden soll"/>
-
-            <TextBox Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}" 
-         VerticalAlignment="Top" 
-         HorizontalAlignment="Center" 
-         Width="250" 
-         Height="35" 
-         Margin="0,0,0,10" 
-         FontSize="16"
-         Padding="5"
-         Background="#ffffff"
-         BorderBrush="#B0B0B0"
-         BorderThickness="1"
-         VerticalContentAlignment="Center" 
-         HorizontalContentAlignment="Center"
-         ToolTip="Ergebnis der Umrechnung"/>
-
-
-            <Button Content="Verlauf anzeigen"
-Width="250"
-Height="35"
-Margin="0,10,0,0"
-FontSize="16"
-Background="#2F4F4F"
-Foreground="White"
-Click="ShowHistory_Click" />
-            
+                <Button Content="Settings"
+                        Width="120"
+                        Height="40"
+                        Margin="10"
+                        FontSize="16"
+                        Background="#00796B"
+                        Foreground="White"
+                        Cursor="Hand"
+                        BorderThickness="0"
+                        Click="EditButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#00796B"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Padding" Value="10,5"/>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2" Opacity="0.2"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#00695C"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#004D40"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </WrapPanel>
         </StackPanel>
 
+        <!-- Inhalt -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="320">
 
+            <!-- Kategorie -->
+            <TextBlock Text="Kategorie auswählen:"
+                       FontWeight="SemiBold"
+                       FontSize="14"
+                       Foreground="#555555"
+                       Margin="0,0,0,5"/>
+            <ComboBox ItemsSource="{Binding Categories}"
+                      SelectedItem="{Binding SelectedCategory}"
+                      DisplayMemberPath="CategoryName"
+                      ToolTip="Wähle eine Kategorie"
+                      Width="320"
+                      Height="38"
+                      Margin="0,0,0,15"
+                      Background="White"
+                      BorderBrush="#CCCCCC"
+                      BorderThickness="1"
+                      FontSize="15"
+                      Padding="6"
+                      VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#333333"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+
+            <!-- Ursprungseinheit -->
+            <TextBlock Text="Ursprungseinheit:"
+                       FontWeight="SemiBold"
+                       FontSize="14"
+                       Foreground="#555555"
+                       Margin="0,0,0,5"/>
+            <ComboBox ItemsSource="{Binding AvailableUnits}"
+                      SelectedItem="{Binding FromUnit}"
+                      DisplayMemberPath="Unit"
+                      ToolTip="Ursprungseinheit"
+                      Width="320"
+                      Height="38"
+                      Margin="0,0,0,15"
+                      Background="White"
+                      BorderBrush="#CCCCCC"
+                      BorderThickness="1"
+                      FontSize="15"
+                      Padding="6"
+                      VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#333333"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+
+            <!-- Zieleinheit -->
+            <TextBlock Text="Zieleinheit:"
+                       FontWeight="SemiBold"
+                       FontSize="14"
+                       Foreground="#555555"
+                       Margin="0,0,0,5"/>
+            <ComboBox ItemsSource="{Binding AvailableUnits}"
+                      SelectedItem="{Binding ToUnit}"
+                      DisplayMemberPath="Unit"
+                      ToolTip="Zieleinheit"
+                      Width="320"
+                      Height="38"
+                      Margin="0,0,0,25"
+                      Background="White"
+                      BorderBrush="#CCCCCC"
+                      BorderThickness="1"
+                      FontSize="15"
+                      Padding="6"
+                      VerticalContentAlignment="Center">
+                <ComboBox.Foreground>
+                    <SolidColorBrush Color="#333333"/>
+                </ComboBox.Foreground>
+            </ComboBox>
+            <TextBlock Text="Zahl:"
+           FontWeight="SemiBold"
+           FontSize="14"
+           Foreground="#555555"
+           Margin="0,0,0,5"/>
+
+            <TextBox Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Center"
+                     Width="320"
+                     Height="38"
+                     Margin="0,0,0,15"
+                     FontSize="15"
+                     Padding="6"
+                     Background="White"
+                     BorderBrush="#CCCCCC"
+                     BorderThickness="1"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     ToolTip="Gib den Wert ein, der umgerechnet werden soll"/>
+
+            <TextBox Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Center"
+                     Width="320"
+                     Height="38"
+                     Margin="0,0,0,15"
+                     FontSize="15"
+                     Padding="6"
+                     Background="White"
+                     BorderBrush="#CCCCCC"
+                     BorderThickness="1"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     ToolTip="Ergebnis der Umrechnung"
+                     IsReadOnly="True"/>
+
+        </StackPanel>
 
     </Grid>
 </Window>

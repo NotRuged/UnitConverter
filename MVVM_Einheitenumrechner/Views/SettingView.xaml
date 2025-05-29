@@ -5,95 +5,144 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
         mc:Ignorable="d"
-        Title="SettingView" Height="450" Width="800" Background="#FEF3E1">
+        Title="SettingView" Height="500" Width="800" Background="#FEF3E1">
+
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="6"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid Margin="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Margin="0,0,0,30">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
+        <!-- Header -->
+        <DockPanel Grid.Row="0" LastChildFill="True" Margin="0 0 0 20">
             <Button Content="← Back"
-                Width="80"
-                Height="30"
-                Click="BackButton_Click"
-                Background="#DDDDDD"
-                Foreground="Black"
-                FontWeight="Bold"
-                Margin="0,0,10,0"
-                BorderThickness="0"
-                Cursor="Hand"/>
+                    Width="90"
+                    Height="35"
+                    Click="BackButton_Click"
+                    Background="#E0E0E0"
+                    Foreground="#333"
+                    BorderBrush="#CCCCCC"
+                    Style="{StaticResource RoundedButtonStyle}"
+                    Margin="0,0,10,0"/>
 
-            <TextBlock Grid.Column="1"
-                   Text="SETTINGS"
-                   FontSize="26"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+            <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="⚙ Einstellungen"
+                           FontSize="36"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#70C1B3" Offset="0.0" />
+                            <GradientStop Color="#43A047" Offset="0.5" />
+                            <GradientStop Color="#00838F" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
 
-            <!-- Reload Icon -->
-            <Image Grid.Column="2"
-               Source="/Images/StartPage.png"
-               Width="50"
-               Height="50"
-               VerticalAlignment="Top"
-               HorizontalAlignment="Right"/>
-        </Grid>
+                <!-- Linie unter dem Titel -->
+                <Rectangle Height="5"
+                           Width="325"
+                           Margin="0,5,0,0"
+                           HorizontalAlignment="Center">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#70C1B3" Offset="0.0" />
+                            <GradientStop Color="#43A047" Offset="0.5" />
+                            <GradientStop Color="#00838F" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </StackPanel>
+        </DockPanel>
 
-        <StackPanel Grid.Row="1"
-                Width="300"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left">
+        <!-- Content -->
+        <Border Grid.Row="1"
+                Padding="15"
+                CornerRadius="12"
+                Background="White"
+                BorderBrush="#DDD"
+                BorderThickness="1"
+                Width="360"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+            <StackPanel>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="CategoryName"
-                       FontWeight="SemiBold"
-                       Margin="0,0,0,5"/>
+                <TextBlock Text="Kategorie"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Margin="0,0,0,5"/>
                 <TextBox Text="{Binding CategoryName}"
-                     Background="#E0E0E0"
-                     BorderThickness="0"
-                     Height="30"
-                     Padding="5"/>
-            </StackPanel>
+                         Background="#F5F5F5"
+                         BorderBrush="#CCC"
+                         BorderThickness="1"
+                         Height="30"
+                         Padding="5"
+                         Margin="0,0,0,15"/>
 
-            <StackPanel Margin="0,0,0,10">
-                <TextBlock Text="Unit"
-                       FontWeight="SemiBold"
-                       Margin="0,0,0,5"/>
+                <TextBlock Text="Einheit"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Margin="0,0,0,5"/>
                 <TextBox Text="{Binding Unit}"
-                     Background="#E0E0E0"
-                     BorderThickness="0"
-                     Height="30"
-                     Padding="5"/>
-            </StackPanel>
+                         Background="#F5F5F5"
+                         BorderBrush="#CCC"
+                         BorderThickness="1"
+                         Height="30"
+                         Padding="5"
+                         Margin="0,0,0,15"/>
 
-            <StackPanel Margin="0,0,0,20">
-                <TextBlock Text="Factor"
-                       FontWeight="SemiBold"
-                       Margin="0,0,0,5"/>
+                <TextBlock Text="Faktor"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Margin="0,0,0,5"/>
                 <TextBox Text="{Binding Factor}"
-                     Background="#E0E0E0"
-                     BorderThickness="0"
-                     Height="30"
-                     Padding="5"/>
-            </StackPanel>
+                         Background="#F5F5F5"
+                         BorderBrush="#CCC"
+                         BorderThickness="1"
+                         Height="30"
+                         Padding="5"
+                         Margin="0,0,0,25"/>
 
-            <Button Content="Save"
-                Command="{Binding SaveCommand}"
-                Background="#4CAF50"
-                Foreground="White"
-                FontWeight="Bold"
-                Height="35"
-                Width="100"
-                HorizontalAlignment="Left"
-                Cursor="Hand"
-                BorderThickness="0"/>
-        </StackPanel>
+                <TextBlock Text="{Binding MessageText}"
+           Foreground="{Binding MessageColor}"
+           FontWeight="Bold"
+           FontSize="13"
+           Margin="0,5,0,0"/>
+
+
+                <Button Content="💾 Speichern"
+                        Command="{Binding SaveCommand}"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        FontSize="14"
+                        Height="40"
+                        BorderThickness="0"
+                        HorizontalAlignment="Right"
+                        Width="120"
+                        Style="{StaticResource RoundedButtonStyle}"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

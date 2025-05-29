@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_Einheitenumrechner.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace MVVM_Einheitenumrechner.Views
         public SettingView()
         {
             InitializeComponent();
+            this.DataContext = new SettingViewModel(); // Hier ViewModel zuweisen
+
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {

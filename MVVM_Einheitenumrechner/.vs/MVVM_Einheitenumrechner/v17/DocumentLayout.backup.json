@@ -1,66 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\",
+  "WorkspaceRootPath": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\settingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\settingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\unitview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\unitview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\unitview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\unitviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\unitviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\historyview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\historyview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\historyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\historyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\class\\historyentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:class\\historyentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\settingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\settingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\settingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\settingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\settingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\views\\unitview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\historyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\historyview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\settingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\settingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\unitviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\unitviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\historyview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\historyview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\class\\historyentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:class\\historyentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\views\\unitview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:views\\unitview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\basisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\basisviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\class\\unitdefinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\class\\unitdefinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:class\\unitdefinition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\class\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\class\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:class\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\andre.desktop-oir8s4a\\onedrive\\desktop\\unit\\unitconverter\\mvvm_einheitenumrechner\\viewmodel\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:viewmodel\\historyviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|c:\\users\\besitzer\\desktop\\mvvm_unit\\unitconverter\\mvvm_einheitenumrechner\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D75D9C1-2939-4955-B093-F79AD3F7503B}|MVVM_Einheitenumrechner.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,53 +66,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SettingView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\SettingView.xaml.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml.cs",
-              "RelativeToolTip": "Views\\SettingView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T16:00:16.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HistoryViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\HistoryViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModel\\HistoryViewModel.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\HistoryViewModel.cs",
-              "RelativeToolTip": "ViewModel\\HistoryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:27:27.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HistoryView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\HistoryView.xaml.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml.cs",
-              "RelativeToolTip": "Views\\HistoryView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:19:22.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "HistoryView.xaml",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml",
               "RelativeDocumentMoniker": "Views\\HistoryView.xaml",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml",
               "RelativeToolTip": "Views\\HistoryView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-14T06:26:25.2Z",
@@ -124,36 +82,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\Category.cs",
-              "RelativeDocumentMoniker": "Class\\Category.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\Category.cs",
-              "RelativeToolTip": "Class\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:32:55.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UnitViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\UnitViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModel\\UnitViewModel.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\UnitViewModel.cs",
-              "RelativeToolTip": "ViewModel\\UnitViewModel.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAiwPsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:29:16.224Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "SettingView.xaml",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml",
               "RelativeDocumentMoniker": "Views\\SettingView.xaml",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml",
               "RelativeToolTip": "Views\\SettingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-14T06:26:12.936Z",
@@ -161,24 +94,101 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAArAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "SettingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\SettingViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\SettingViewModel.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\SettingViewModel.cs*",
+              "RelativeToolTip": "ViewModel\\SettingViewModel.cs*",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAmwGYAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T10:25:49.158Z",
+              "WhenOpened": "2025-05-26T08:57:48.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "SettingView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\SettingView.xaml.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\SettingView.xaml.cs",
+              "RelativeToolTip": "Views\\SettingView.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwB8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:00:16.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HistoryView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\HistoryView.xaml.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\HistoryView.xaml.cs",
+              "RelativeToolTip": "Views\\HistoryView.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:19:22.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitView.xaml",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml",
+              "RelativeDocumentMoniker": "Views\\UnitView.xaml",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml*",
+              "RelativeToolTip": "Views\\UnitView.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-14T06:25:03.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\UnitViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\UnitViewModel.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\UnitViewModel.cs",
+              "RelativeToolTip": "ViewModel\\UnitViewModel.cs",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAswAsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T06:29:16.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HistoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\HistoryViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\HistoryViewModel.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\HistoryViewModel.cs",
+              "RelativeToolTip": "ViewModel\\HistoryViewModel.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:27:27.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UnitView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\UnitView.xaml.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml.cs",
+              "RelativeToolTip": "Views\\UnitView.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:24:48.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-13T10:32:14.255Z",
@@ -186,11 +196,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "HistoryEntry.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\HistoryEntry.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\HistoryEntry.cs",
               "RelativeDocumentMoniker": "Class\\HistoryEntry.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\HistoryEntry.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\HistoryEntry.cs",
               "RelativeToolTip": "Class\\HistoryEntry.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -199,64 +209,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BasisViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\BasisViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModel\\BasisViewModel.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\ViewModel\\BasisViewModel.cs",
-              "RelativeToolTip": "ViewModel\\BasisViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "UnitDefinition.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\UnitDefinition.cs",
+              "RelativeDocumentMoniker": "Class\\UnitDefinition.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\UnitDefinition.cs",
+              "RelativeToolTip": "Class\\UnitDefinition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T10:25:57.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnitView.xaml",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml",
-              "RelativeDocumentMoniker": "Views\\UnitView.xaml",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml",
-              "RelativeToolTip": "Views\\UnitView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-14T06:25:03.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UnitView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\UnitView.xaml.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Views\\UnitView.xaml.cs",
-              "RelativeToolTip": "Views\\UnitView.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T12:24:48.3Z",
+              "WhenOpened": "2025-05-14T06:33:21.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\Category.cs",
+              "RelativeDocumentMoniker": "Class\\Category.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\Category.cs",
+              "RelativeToolTip": "Class\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T10:10:35.917Z"
+              "WhenOpened": "2025-05-14T06:32:55.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UnitDefinition.cs",
-              "DocumentMoniker": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\UnitDefinition.cs",
-              "RelativeDocumentMoniker": "Class\\UnitDefinition.cs",
-              "ToolTip": "C:\\Users\\Andre.DESKTOP-OIR8S4A\\OneDrive\\Desktop\\Unit\\UnitConverter\\MVVM_Einheitenumrechner\\Class\\UnitDefinition.cs",
-              "RelativeToolTip": "Class\\UnitDefinition.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Besitzer\\Desktop\\MVVM_Unit\\UnitConverter\\MVVM_Einheitenumrechner\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T06:33:21.447Z"
+              "WhenOpened": "2025-05-13T10:10:35.917Z"
             }
           ]
         }
