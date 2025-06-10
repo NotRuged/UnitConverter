@@ -14,7 +14,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
 {
     public class UnitViewModel : INotifyPropertyChanged
     {
-        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter1;Connection Timeout=10;";
+        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
 
         public ObservableCollection<Category> Categories { get; set; } = new();
         public ObservableCollection<UnitDefinition> AvailableUnits { get; set; } = new();
@@ -222,7 +222,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
                 double baseValue = input * FromUnit.Factor;
                 double converted = baseValue / ToUnit.Factor;
 
-                Result = $"{converted:F8} {ToUnit.Unit}";
+                Result = $"{converted:F2} {ToUnit.Unit}";
             }
             catch (Exception ex)
             {

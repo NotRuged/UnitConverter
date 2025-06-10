@@ -10,7 +10,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
     public class HistoryViewModel : INotifyPropertyChanged
     {
        // private string connectionString = @"Data Source=DESKTOP-OIR8S4A\SQLEXPRESS;Trusted_Connection=yes;Database=UnitCalculator;Connection Timeout=10;";
-        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter1;Connection Timeout=10;";
+        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
 
         public ObservableCollection<HistoryEntry> HistoryEntries { get; set; } = new();
 

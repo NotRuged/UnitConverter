@@ -9,7 +9,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
 {
     public class SettingViewModel : INotifyPropertyChanged
     {
-        private readonly string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter1;Connection Timeout=10;";
+        private readonly string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
 
         private string _categoryName;
         public string CategoryName
