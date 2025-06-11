@@ -1,0 +1,81 @@
+\doxysection{MVVM\+\_\+\+Einheitenumrechner.\+New\+Folder.\+Unit\+Calculator\+Context Class Reference}
+\hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context}{}\label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context}\index{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext@{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext}}
+
+
+Datenbankkontext für den Einheitenumrechner.  
+
+
+Inheritance diagram for MVVM\+\_\+\+Einheitenumrechner.\+New\+Folder.\+Unit\+Calculator\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a6f4030593d330d116a358ffa0eef6a79}{On\+Configuring}} (Db\+Context\+Options\+Builder options\+Builder)
+\begin{DoxyCompactList}\small\item\em Konfiguriert die Datenbankverbindung. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a394e32399ba5bf018e81949d10eea17e}{On\+Model\+Creating}} (Model\+Builder model\+Builder)
+\begin{DoxyCompactList}\small\item\em Konfiguriert das Modell und die Tabellenstruktur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a5b731dfd57f3636cb57c656c0fc3a86e}\label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a5b731dfd57f3636cb57c656c0fc3a86e} 
+Db\+Set$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}{History\+Entry}} $>$ {\bfseries History\+Entries}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Historieneinträge in der Datenbank. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a899e4cccf1a7af212ac2ee8896c9a131}\label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a899e4cccf1a7af212ac2ee8896c9a131} 
+Db\+Set$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} $>$ {\bfseries Categories}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Kategorien in der Datenbank. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a17fd19ccb6e8fb93c41058c46ea32f45}\label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a17fd19ccb6e8fb93c41058c46ea32f45} 
+Db\+Set$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_unit_definition}{Unit\+Definition}} $>$ {\bfseries Unit\+Definitions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Einheitendefinitionen in der Datenbank. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Datenbankkontext für den Einheitenumrechner. 
+
+Verwaltet die Verbindung zur Datenbank und definiert die Zuordnung der Entitäten zu Tabellen und Beziehungen. Diese Klasse wird von Entity Framework Core verwendet. 
+
+\label{doc-func-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a6f4030593d330d116a358ffa0eef6a79}\index{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext@{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext}!OnConfiguring@{OnConfiguring}}
+\index{OnConfiguring@{OnConfiguring}!MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext@{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext}}
+\doxysubsubsection{\texorpdfstring{OnConfiguring()}{OnConfiguring()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a6f4030593d330d116a358ffa0eef6a79} 
+override void MVVM\+\_\+\+Einheitenumrechner.\+New\+Folder.\+Unit\+Calculator\+Context.\+On\+Configuring (\begin{DoxyParamCaption}\item[{Db\+Context\+Options\+Builder}]{options\+Builder}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Konfiguriert die Datenbankverbindung. 
+
+Hier wird die SQL Server-\/\+Verbindungszeichenfolge definiert. Trust\+Server\+Certificate wird gesetzt, um Zertifikatswarnungen zu umgehen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em options\+Builder} & Der Options-\/\+Builder für Db\+Context. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a394e32399ba5bf018e81949d10eea17e}\index{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext@{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext}!OnModelCreating@{OnModelCreating}}
+\index{OnModelCreating@{OnModelCreating}!MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext@{MVVM\_Einheitenumrechner.NewFolder.UnitCalculatorContext}}
+\doxysubsubsection{\texorpdfstring{OnModelCreating()}{OnModelCreating()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context_a394e32399ba5bf018e81949d10eea17e} 
+override void MVVM\+\_\+\+Einheitenumrechner.\+New\+Folder.\+Unit\+Calculator\+Context.\+On\+Model\+Creating (\begin{DoxyParamCaption}\item[{Model\+Builder}]{model\+Builder}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Konfiguriert das Modell und die Tabellenstruktur. 
+
+Legt Tabellenzuordnungen und Beziehungen zwischen den Entitäten fest.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Builder} & Der Model\+Builder zum Konfigurieren der Entitäten. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MVVM\+\_\+\+Einheitenumrechner/\+New\+Folder/Unit\+Calculator\+Context.\+cs\end{DoxyCompactItemize}

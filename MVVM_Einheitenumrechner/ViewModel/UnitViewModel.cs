@@ -1,22 +1,27 @@
 ﻿using MVVM_Einheitenumrechner.Class;
+using MVVM_Einheitenumrechner.Data;
+using MVVM_Einheitenumrechner.NewFolder;
 using MVVM_Einheitenumrechner.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Data.Common;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Timers;
 using System.Windows;
-using System.Xml.Linq;
 
 namespace MVVM_Einheitenumrechner.ViewModel
 {
+    /**
+     * \brief ViewModel zur Steuerung der Einheiten-Umrechnung und Verwaltung von Kategorien und Einheiten.
+     * 
+     * Lädt Kategorien und Einheiten, rechnet Werte um, speichert Umrechnungen in DB oder JSON.
+     */
     public class UnitViewModel : INotifyPropertyChanged
     {
-        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
-
+        /// \brief Liste aller Kategorien.
         public ObservableCollection<Category> Categories { get; set; } = new();
+
+        /// \brief Liste der Einheiten der ausgewählten Kategorie.
         public ObservableCollection<UnitDefinition> AvailableUnits { get; set; } = new();
 
         private Category _selectedCategory;
@@ -25,9 +30,18 @@ namespace MVVM_Einheitenumrechner.ViewModel
         private string _inputValue;
         private string _result;
 
-        // Timer für verzögertes Speichern
+        private List<HistoryEntry> _historyList = new();
+        private readonly FileJSONRepository _jsonRepo = new("History");
+        private readonly FileJSONRepository _history = new FileJSONRepository("History");
+
+
         private System.Timers.Timer _saveTimer;
 
+        /**
+         * \brief Die aktuell ausgewählte Kategorie.
+         * 
+         * Lädt Einheiten der Kategorie beim Setzen.
+         */
         public Category SelectedCategory
         {
             get => _selectedCategory;
@@ -39,6 +53,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
+        /// \brief Die Ausgangseinheit der Umrechnung.
         public UnitDefinition FromUnit
         {
             get => _fromUnit;
@@ -50,6 +65,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
+        /// \brief Die Ziel-Einheit der Umrechnung.
         public UnitDefinition ToUnit
         {
             get => _toUnit;
@@ -61,6 +77,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
+        /// \brief Der Eingabewert für die Umrechnung als String.
         public string InputValue
         {
             get => _inputValue;
@@ -69,12 +86,11 @@ namespace MVVM_Einheitenumrechner.ViewModel
                 _inputValue = value;
                 OnPropertyChanged();
                 ConvertUnits();
-
-                // Timer zurücksetzen, da neue Eingabe
                 ResetSaveTimer();
             }
         }
 
+        /// \brief Das Ergebnis der Umrechnung als String.
         public string Result
         {
             get => _result;
@@ -85,71 +101,75 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
+        /**
+         * \brief Konstruktor initialisiert Timer und lädt Kategorien.
+         */
         public UnitViewModel()
         {
-            // Timer initialisieren: 5 Sekunden (5000 ms)
             _saveTimer = new System.Timers.Timer(2500);
             _saveTimer.AutoReset = false; // nur einmal auslösen
             _saveTimer.Elapsed += SaveTimer_Elapsed;
 
-            LoadCategories();
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.SetSliderVisibility(true);
+            CheckSlider();
         }
 
+        /**
+         * \brief Startet oder resettet den Timer zum verzögerten Speichern.
+         */
         private void ResetSaveTimer()
         {
             _saveTimer.Stop();
             _saveTimer.Start();
         }
 
+
+        /**
+         * \brief Eventhandler zum Speichern der Umrechnung nach Timerablauf.
+         */
         private void SaveTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            // Timer läuft im Hintergrundthread - Wechsel in UI-Thread nötig
             Application.Current.Dispatcher.Invoke(() =>
             {
                 if (double.TryParse(InputValue?.Replace(",", "."), System.Globalization.NumberStyles.Any,
-                                    System.Globalization.CultureInfo.InvariantCulture, out double input))
+                    System.Globalization.CultureInfo.InvariantCulture, out double input))
                 {
-                    SaveConversion(input, Result);
+                    int slidevalue = MainWindow.CheckSlideMode;
+
+                    if (slidevalue == 0)
+                    {
+                        SaveConversion(input, Result);
+                    }
+                    else
+                    {
+                        SaveConversionJson(input, Result);
+                    }
                 }
             });
         }
 
-        public void TestConnection()
+        /**
+         * \brief Prüft den Modus (Datenbank oder JSON) und lädt Kategorien entsprechend.
+         */
+        private void CheckSlider()
         {
-            using var connection = new SqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                //MessageBox.Show("Verbindung erfolgreich!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Verbindung fehlgeschlagen: " + ex.Message);
-            }
+            int slidevalue = MainWindow.CheckSlideMode;
+            LoadCategories();
         }
 
+        /**
+         * \brief Lädt alle Kategorien aus der Datenbank.
+         */
         private void LoadCategories()
         {
             try
             {
-                TestConnection();
+                using var context = new UnitCalculatorContext();
                 Categories.Clear();
-
-                using var connection = new SqlConnection(connectionString);
-                string query = "SELECT CategoryID, CategoryName FROM Categories";
-
-                connection.Open();
-                using var command = new SqlCommand(query, connection);
-                using var reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Categories.Add(new Category
-                    {
-                        CategoryID = reader["CategoryID"] as int? ?? 0,
-                        CategoryName = reader["CategoryName"]?.ToString() ?? string.Empty
-                    });
-                }
+                var cats = context.Categories.ToList();
+                foreach (var cat in cats)
+                    Categories.Add(cat);
             }
             catch (Exception ex)
             {
@@ -157,33 +177,22 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
-
+        /**
+         * \brief Lädt die Einheiten der aktuell ausgewählten Kategorie.
+         */
         private void LoadUnits()
         {
             try
             {
                 AvailableUnits.Clear();
-
                 if (SelectedCategory == null) return;
 
-                using var connection = new SqlConnection(connectionString);
-                string query = "SELECT Nr, CategoryID, Unit, Factor FROM UnitDefinitions WHERE CategoryID = @catId";
-
-                connection.Open();
-                using var command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@catId", SelectedCategory.CategoryID);
-
-                using var reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    AvailableUnits.Add(new UnitDefinition
-                    {
-                        Nr = reader["Nr"] as int? ?? 0,
-                        CategoryID = reader["CategoryID"] as int? ?? 0,
-                        Unit = reader["Unit"]?.ToString() ?? string.Empty,
-                        Factor = reader["Factor"] as double? ?? 1.0
-                    });
-                }
+                using var context = new UnitCalculatorContext();
+                var units = context.UnitDefinitions
+                    .Where(u => u.CategoryID == SelectedCategory.CategoryID)
+                    .ToList();
+                foreach (var unit in units)
+                    AvailableUnits.Add(unit);
 
                 FromUnit = AvailableUnits.FirstOrDefault();
                 ToUnit = AvailableUnits.Skip(1).FirstOrDefault();
@@ -194,7 +203,9 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
-
+        /**
+         * \brief Führt die Umrechnung durch und setzt das Ergebnis.
+         */
         private void ConvertUnits()
         {
             try
@@ -206,22 +217,20 @@ namespace MVVM_Einheitenumrechner.ViewModel
                 }
 
                 if (!double.TryParse(InputValue.Replace(",", "."), System.Globalization.NumberStyles.Any,
-                                     System.Globalization.CultureInfo.InvariantCulture, out double input))
+                    System.Globalization.CultureInfo.InvariantCulture, out double input))
                 {
                     Result = "Ungültige Eingabe";
                     return;
                 }
 
-                // Schutz gegen Division durch Null
                 if (ToUnit.Factor == 0)
                 {
                     Result = "Fehler: Faktor der Ziel-Einheit ist 0";
                     return;
                 }
 
-                double baseValue = input * FromUnit.Factor;
-                double converted = baseValue / ToUnit.Factor;
-
+                decimal baseValue = (decimal)input * FromUnit.Factor;
+                decimal converted = baseValue / ToUnit.Factor;
                 Result = $"{converted:F2} {ToUnit.Unit}";
             }
             catch (Exception ex)
@@ -231,7 +240,9 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
         }
 
-
+        /**
+         * \brief Speichert die Umrechnung in der Datenbank.
+         */
         private void SaveConversion(double inputValue, string resultValue)
         {
             if (SelectedCategory == null || FromUnit == null || ToUnit == null)
@@ -239,29 +250,62 @@ namespace MVVM_Einheitenumrechner.ViewModel
 
             try
             {
-                using var connection = new SqlConnection(connectionString);
-                string insertQuery = @"INSERT INTO ConversionHistory 
-                               (CategoryID, FromUnit, ToUnit, InputValue, ResultValue) 
-                               VALUES (@CategoryID, @FromUnit, @ToUnit, @InputValue, @ResultValue)";
+                using var context = new UnitCalculatorContext();
+                var history = new HistoryEntry
+                {
+                    CategoryID = SelectedCategory.CategoryID,
+                    FromUnit = FromUnit.Unit,
+                    ToUnit = ToUnit.Unit,
+                    InputValue = inputValue,
+                    ResultValue = resultValue ?? ""
+                };
 
-                connection.Open();
-                using var command = new SqlCommand(insertQuery, connection);
-                command.Parameters.AddWithValue("@CategoryID", SelectedCategory.CategoryID);
-                command.Parameters.AddWithValue("@FromUnit", FromUnit.Unit);
-                command.Parameters.AddWithValue("@ToUnit", ToUnit.Unit);
-                command.Parameters.AddWithValue("@InputValue", inputValue);
-                command.Parameters.AddWithValue("@ResultValue", resultValue ?? "");
-
-                command.ExecuteNonQuery();
+                context.HistoryEntries.Add(history);
+                context.SaveChanges();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Speichern der Umrechnung: " + ex.Message);
+                MessageBox.Show($"Fehler beim Speichern:{ex.Message}");
             }
         }
 
+        /**
+         * \brief Speichert die Umrechnung im JSON-Format.
+         */
+        private void SaveConversionJson(double inputValue, string resultValue)
+        {
+            try
+            {
+                var existingEntries = _history.Load<HistoryEntry>();
+                var entry = new HistoryEntry
+                {
+                    CategoryID = SelectedCategory.CategoryID,
+                    FromUnit = FromUnit.Unit,
+                    ToUnit = ToUnit.Unit,
+                    InputValue = inputValue,
+                    ResultValue = resultValue ?? ""
+                };
 
+                _historyList.Add(entry);
+                _jsonRepo.Save(_historyList);
+
+                if (existingEntries != null)
+                {
+                    _historyList.AddRange(existingEntries);
+                    _jsonRepo.Save(_historyList);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Speichern in JSON:\n{ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// \brief Event zum Benachrichtigen von Property-Änderungen.
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// \brief Löst das PropertyChanged-Event aus.
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

@@ -1,0 +1,79 @@
+\doxysection{MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+Unit\+View\+Model Class Reference}
+\hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model}{}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model}\index{MVVM\_Einheitenumrechner.ViewModel.UnitViewModel@{MVVM\_Einheitenumrechner.ViewModel.UnitViewModel}}
+
+
+\doxylink{namespace_m_v_v_m___einheitenumrechner_1_1_view_model}{View\+Model} zur Steuerung der Einheiten-\/\+Umrechnung und Verwaltung von Kategorien und Einheiten.  
+
+
+Inheritance diagram for MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+Unit\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_aa53fb999faf119130f1e0a984327197f}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_aa53fb999faf119130f1e0a984327197f} 
+{\bfseries Unit\+View\+Model} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor initialisiert Timer und lädt Kategorien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_ae4eda749c4908d2ce80389268e207b3a}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_ae4eda749c4908d2ce80389268e207b3a} 
+virtual void {\bfseries On\+Property\+Changed} (\mbox{[}Caller\+Member\+Name\mbox{]} string name=null)
+\begin{DoxyCompactList}\small\item\em Löst das Property\+Changed-\/\+Event aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a77c4115e83cb2d5351f0309a2b662413}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a77c4115e83cb2d5351f0309a2b662413} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} $>$ {\bfseries Categories} = new()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Liste aller Kategorien. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a48b0a26e1c312d1d2e6b2d9c8a2a61f3}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a48b0a26e1c312d1d2e6b2d9c8a2a61f3} 
+Observable\+Collection$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_unit_definition}{Unit\+Definition}} $>$ {\bfseries Available\+Units} = new()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Liste der Einheiten der ausgewählten Kategorie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_af9e6c13c0795b1e885163730d726fbc4}{Selected\+Category}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Die aktuell ausgewählte Kategorie. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a3e013f2988b21c8cb62d70bc5267fe74}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a3e013f2988b21c8cb62d70bc5267fe74} 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_unit_definition}{Unit\+Definition}} {\bfseries From\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Die Ausgangseinheit der Umrechnung. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a71c6300f4d9f10d8106ef97fa1d556f5}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a71c6300f4d9f10d8106ef97fa1d556f5} 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_unit_definition}{Unit\+Definition}} {\bfseries To\+Unit}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Die Ziel-\/\+Einheit der Umrechnung. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a7d0903dc10a8b12bfe4a004bda2500b3}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a7d0903dc10a8b12bfe4a004bda2500b3} 
+string {\bfseries Input\+Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Der Eingabewert für die Umrechnung als String. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a556877894bc42079657f25cbb4952b25}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a556877894bc42079657f25cbb4952b25} 
+string {\bfseries Result}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Das Ergebnis der Umrechnung als String. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a74a8f8b753abe9b715303f58549f7606}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_a74a8f8b753abe9b715303f58549f7606} 
+Property\+Changed\+Event\+Handler {\bfseries Property\+Changed}
+\begin{DoxyCompactList}\small\item\em Event zum Benachrichtigen von Property-\/Änderungen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_m_v_v_m___einheitenumrechner_1_1_view_model}{View\+Model} zur Steuerung der Einheiten-\/\+Umrechnung und Verwaltung von Kategorien und Einheiten. 
+
+Lädt Kategorien und Einheiten, rechnet Werte um, speichert Umrechnungen in DB oder JSON. 
+
+\label{doc-property-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_af9e6c13c0795b1e885163730d726fbc4}\index{MVVM\_Einheitenumrechner.ViewModel.UnitViewModel@{MVVM\_Einheitenumrechner.ViewModel.UnitViewModel}!SelectedCategory@{SelectedCategory}}
+\index{SelectedCategory@{SelectedCategory}!MVVM\_Einheitenumrechner.ViewModel.UnitViewModel@{MVVM\_Einheitenumrechner.ViewModel.UnitViewModel}}
+\doxysubsubsection{\texorpdfstring{SelectedCategory}{SelectedCategory}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model_af9e6c13c0795b1e885163730d726fbc4} 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+Unit\+View\+Model.\+Selected\+Category\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Die aktuell ausgewählte Kategorie. 
+
+Lädt Einheiten der Kategorie beim Setzen. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MVVM\+\_\+\+Einheitenumrechner/\+View\+Model/Unit\+View\+Model.\+cs\end{DoxyCompactItemize}

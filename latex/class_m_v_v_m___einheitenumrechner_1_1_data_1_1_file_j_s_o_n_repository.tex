@@ -1,0 +1,89 @@
+\doxysection{MVVM\+\_\+\+Einheitenumrechner.\+Data.\+File\+JSONRepository Class Reference}
+\hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository}{}\label{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository}\index{MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}}
+
+
+Generische JSON-\/\+Dateiverwaltung für Datenobjekte.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a51ab24328b9ba9b954a70d022a5f3180}{File\+JSONRepository}} (string type)
+\begin{DoxyCompactList}\small\item\em Konstruktor zum Setzen des Dateipfads basierend auf dem Typ. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_ac90beb74b0b1d78cef81c2a17ad1b9e2}{Save$<$ T $>$}} (List$<$ T $>$ items)
+\begin{DoxyCompactList}\small\item\em Speichert eine Liste von Objekten als JSON-\/\+Datei. \end{DoxyCompactList}\item 
+List$<$ T $>$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a3869dbdbabcf609b5c031bdf7e2c9958}{Load$<$ T $>$}} ()
+\begin{DoxyCompactList}\small\item\em Lädt eine Liste von Objekten aus einer JSON-\/\+Datei. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generische JSON-\/\+Dateiverwaltung für Datenobjekte. 
+
+Diese Klasse übernimmt das Speichern und Laden von Datenlisten im JSON-\/\+Format aus einer Datei. Der Pfad zur Datei wird je nach Typ dynamisch gesetzt (z.\+ B. „\+History“, „\+Unit\+Definition“ oder „\+Categories“). 
+
+\label{doc-constructors}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a51ab24328b9ba9b954a70d022a5f3180}\index{MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}!FileJSONRepository@{FileJSONRepository}}
+\index{FileJSONRepository@{FileJSONRepository}!MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}}
+\doxysubsubsection{\texorpdfstring{FileJSONRepository()}{FileJSONRepository()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a51ab24328b9ba9b954a70d022a5f3180} 
+MVVM\+\_\+\+Einheitenumrechner.\+Data.\+File\+JSONRepository.\+File\+JSONRepository (\begin{DoxyParamCaption}\item[{string}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor zum Setzen des Dateipfads basierend auf dem Typ. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Der Datentyp, der gespeichert oder geladen werden soll (z.\+ B. „\+History“). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a3869dbdbabcf609b5c031bdf7e2c9958}\index{MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}!Load$<$ T $>$@{Load$<$ T $>$}}
+\index{Load$<$ T $>$@{Load$<$ T $>$}!MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}}
+\doxysubsubsection{\texorpdfstring{Load$<$ T $>$()}{Load< T >()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_a3869dbdbabcf609b5c031bdf7e2c9958} 
+List$<$ T $>$ MVVM\+\_\+\+Einheitenumrechner.\+Data.\+File\+JSONRepository.\+Load$<$ T $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lädt eine Liste von Objekten aus einer JSON-\/\+Datei. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Der Typ der zu ladenden Objekte. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Eine Liste der geladenen Objekte. Gibt eine leere Liste zurück, wenn die Datei nicht existiert. 
+\end{DoxyReturn}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_ac90beb74b0b1d78cef81c2a17ad1b9e2}\index{MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}!Save$<$ T $>$@{Save$<$ T $>$}}
+\index{Save$<$ T $>$@{Save$<$ T $>$}!MVVM\_Einheitenumrechner.Data.FileJSONRepository@{MVVM\_Einheitenumrechner.Data.FileJSONRepository}}
+\doxysubsubsection{\texorpdfstring{Save$<$ T $>$()}{Save< T >()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository_ac90beb74b0b1d78cef81c2a17ad1b9e2} 
+void MVVM\+\_\+\+Einheitenumrechner.\+Data.\+File\+JSONRepository.\+Save$<$ T $>$ (\begin{DoxyParamCaption}\item[{List$<$ T $>$}]{items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichert eine Liste von Objekten als JSON-\/\+Datei. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Der Typ der Objekte in der Liste. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em items} & Die zu speichernde Liste von Objekten. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MVVM\+\_\+\+Einheitenumrechner/\+Data/JSONFile\+Create.\+cs\end{DoxyCompactItemize}

@@ -1,82 +1,120 @@
-﻿using System;
+﻿using MVVM_Einheitenumrechner.Class;
+using MVVM_Einheitenumrechner.NewFolder;
+using System;
 using System.ComponentModel;
-using System.Data.SqlClient;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 
 namespace MVVM_Einheitenumrechner.ViewModel
 {
+    /**
+     * \brief ViewModel für die Einstellungen zum Hinzufügen von Kategorien und Einheiten.
+     * 
+     * Ermöglicht das Speichern neuer Einheiten mit zugehöriger Kategorie in die Datenbank.
+     */
     public class SettingViewModel : INotifyPropertyChanged
     {
-        private readonly string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
-
-        private string _categoryName;
+        /// \brief Der Name der Kategorie.
         public string CategoryName
         {
             get => _categoryName;
             set
             {
                 _categoryName = value;
-                OnPropertyChanged(nameof(CategoryName));
+                OnPropertyChanged();
             }
         }
+        private string _categoryName;
 
-        private string _unit;
+        /// \brief Die neue Einheit.
         public string Unit
         {
             get => _unit;
             set
             {
                 _unit = value;
-                OnPropertyChanged(nameof(Unit));
+                OnPropertyChanged();
             }
         }
+        private string _unit;
 
-        private decimal _factor;
+        /// \brief Der Umrechnungsfaktor für die Einheit.
         public decimal Factor
         {
             get => _factor;
             set
             {
                 _factor = value;
-                OnPropertyChanged(nameof(Factor));
+                OnPropertyChanged();
             }
         }
+        private decimal _factor;
 
-        private string _messageText;
+        /// \brief Meldungstext zur Anzeige von Benutzerinformationen.
         public string MessageText
         {
             get => _messageText;
             set
             {
                 _messageText = value;
-                OnPropertyChanged(nameof(MessageText));
+                OnPropertyChanged();
             }
         }
+        private string _messageText;
 
-        private Brush _messageColor;
+        /// \brief Farbe der Meldung (z. B. Grün für Erfolg, Rot für Fehler).
         public Brush MessageColor
         {
             get => _messageColor;
             set
             {
                 _messageColor = value;
-                OnPropertyChanged(nameof(MessageColor));
+                OnPropertyChanged();
+            }
+        }
+        private Brush _messageColor;
+
+        /// \brief Kommando zum Speichern der Einheit.
+        public ICommand SaveCommand { get; set; }
+
+        /**
+         * \brief Konstruktor, der den Modus prüft und die Befehle entsprechend initialisiert.
+         */
+        public SettingViewModel()
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.SetSliderVisibility(false);
+            CheckSlider();
+        }
+
+        /**
+         * \brief Prüft den Slider-Modus und setzt den Speicherbefehl.
+         * 
+         * Bei Slide-Wert 0 wird das Speichern über die Datenbank aktiviert.
+         */
+        public void CheckSlider()
+        {
+            int slidevalue = MainWindow.CheckSlideMode;
+
+            if (slidevalue == 0)
+            {
+                SaveCommand = new RelayCommand(SaveSetting);
+            }
+            else
+            {
+                SaveCommand = new RelayCommand(SaveSetting);
             }
         }
 
-
-
-        public ICommand SaveCommand { get; }
-
-        public SettingViewModel()
-        {
-            SaveCommand = new RelayCommand(Save);
-        }
-
-        [Obsolete]
-        private void Save(object parameter)
+        /**
+         * \brief Speichert eine neue Einheit und ggf. eine neue Kategorie in die Datenbank.
+         * 
+         * \param parameter Optionales Übergabeobjekt (nicht verwendet).
+         */
+        private void SaveSetting(object parameter)
         {
             if (string.IsNullOrWhiteSpace(CategoryName) || string.IsNullOrWhiteSpace(Unit) || Factor == 0)
             {
@@ -87,86 +125,86 @@ namespace MVVM_Einheitenumrechner.ViewModel
 
             try
             {
-                int categoryId;
+                using var db = new UnitCalculatorContext();
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                var category = db.Categories.FirstOrDefault(c => c.CategoryName == CategoryName);
+                if (category == null)
                 {
-                    conn.Open();
-
-                    // Kategorie holen oder einfügen
-                    string categoryQuery = "SELECT CategoryID FROM Categories WHERE CategoryName = @name";
-                    using (SqlCommand cmd = new SqlCommand(categoryQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@name", CategoryName);
-                        var result = cmd.ExecuteScalar();
-
-                        if (result != null && int.TryParse(result.ToString(), out int id))
-                        {
-                            categoryId = id;
-                        }
-                        else
-                        {
-                            string insertCategory = "INSERT INTO Categories (CategoryName) VALUES (@name); SELECT CAST(SCOPE_IDENTITY() AS int);";
-                            using (SqlCommand insertCmd = new SqlCommand(insertCategory, conn))
-                            {
-                                insertCmd.Parameters.AddWithValue("@name", CategoryName);
-                                var insertedId = insertCmd.ExecuteScalar();
-                                if (insertedId == null || !int.TryParse(insertedId.ToString(), out categoryId))
-                                {
-                                    MessageText = "Fehler beim Einfügen der Kategorie.";
-                                    MessageColor = Brushes.Red;
-                                    return;
-                                }
-                            }
-                        }
-                    }
-
-                    // Einheit einfügen
-                    string insertUnit = "INSERT INTO UnitDefinitions (CategoryID, Unit, Factor) VALUES (@catId, @unit, @factor)";
-                    using (SqlCommand cmd = new SqlCommand(insertUnit, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@catId", categoryId);
-                        cmd.Parameters.AddWithValue("@unit", Unit);
-                        cmd.Parameters.AddWithValue("@factor", Factor);
-                        cmd.ExecuteNonQuery();
-                    }
+                    category = new Category { CategoryName = CategoryName };
+                    db.Categories.Add(category);
+                    db.SaveChanges();
                 }
+
+                var newUnit = new UnitDefinition
+                {
+                    CategoryID = category.CategoryID,
+                    Unit = Unit,
+                    Factor = Factor
+                };
+
+                db.UnitDefinitions.Add(newUnit);
+                db.SaveChanges();
 
                 MessageText = "Einheit erfolgreich gespeichert!";
                 MessageColor = Brushes.Green;
 
-                // Felder zurücksetzen
                 CategoryName = string.Empty;
                 Unit = string.Empty;
                 Factor = 0;
             }
             catch (Exception ex)
             {
-                MessageText = $"Fehler beim Speichern: {ex.Message}";
+                MessageText = $"Fehler beim Speichern: {ex.Message}\n{ex.InnerException?.Message}\n{ex.StackTrace}";
+                MessageBox.Show($"Fehler beim Speichern:\n{ex.Message}\n{ex.InnerException?.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 MessageColor = Brushes.Red;
             }
         }
 
-
-
+        /**
+         * \brief Event zur Benachrichtigung bei Property-Änderungen.
+         */
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName) =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
 
-    public class RelayCommand : ICommand
-    {
-        private readonly Action<object> _execute;
+        /**
+         * \brief Löst das PropertyChanged-Event aus.
+         * 
+         * \param propertyName Der Name der geänderten Eigenschaft.
+         */
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        public RelayCommand(Action<object> execute)
+        /**
+         * \brief Implementierung eines ICommand zur Ausführung von Aktionen.
+         */
+        public class RelayCommand : ICommand
         {
-            _execute = execute;
+            private readonly Action<object> _execute;
+            private readonly Predicate<object> _canExecute;
+
+            /**
+             * \brief Konstruktor für den RelayCommand.
+             * 
+             * \param execute Die auszuführende Aktion.
+             * \param canExecute Optionales Prädikat zur Steuerung der Ausführbarkeit.
+             */
+            public RelayCommand(Action<object> execute, Predicate<object> canExecute = null)
+            {
+                _execute = execute ?? throw new ArgumentNullException(nameof(execute));
+                _canExecute = canExecute;
+            }
+
+            /// \brief Gibt an, ob das Kommando ausgeführt werden kann.
+            public bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
+
+            /// \brief Führt das Kommando aus.
+            public void Execute(object parameter) => _execute(parameter);
+
+            /// \brief Event zur Änderung der Ausführbarkeit.
+            public event EventHandler CanExecuteChanged
+            {
+                add => CommandManager.RequerySuggested += value;
+                remove => CommandManager.RequerySuggested -= value;
+            }
         }
-
-        public bool CanExecute(object parameter) => true;
-
-        public void Execute(object parameter) => _execute(parameter);
-
-        public event EventHandler CanExecuteChanged { add { } remove { } }
     }
 }

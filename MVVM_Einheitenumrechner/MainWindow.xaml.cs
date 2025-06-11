@@ -1,16 +1,5 @@
 ﻿using MVVM_Einheitenumrechner.Views;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SqlClient;
-
 
 namespace MVVM_Einheitenumrechner
 {
@@ -22,17 +11,50 @@ namespace MVVM_Einheitenumrechner
         public MainWindow()
         {
             InitializeComponent();
+            // Initial View setzen, falls gewünscht
+            
         }
+
+        public static int CheckSlideMode = 0;
 
         private void OpenUnitView_Click(object sender, RoutedEventArgs e)
         {
-            // Erstelle eine Instanz von UnitView und öffne das Fenster
-            TestView testView = new TestView();
-            testView.Show();  // Fenster wird angezeigt
-            this.Close(); 
-            // Wenn du möchtest, dass das MainWindow sich schließt:
-            // this.Close();
+            MainContent.Content = new TestView();
         }
 
+        public void ShowHistoryView()
+        {
+            MainContent.Content = new HistoryView();
+        }
+
+        public void ShowSettingsView()
+        {
+            MainContent.Content = new SettingView();
+        }
+
+        public void ShowUnitView()
+        {
+            MainContent.Content = new TestView();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // Wert in int umwandeln
+            int value = (int)e.NewValue;
+            // CheckSlideMode setzen
+            CheckSlideMode = value;
+            // Optional: weitere Logik, wenn sich der Modus ändert
+        }
+
+        public void SetSliderVisibility(bool visible)
+        {
+            this.DataSlider.Visibility = visible ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+
+        public int GetSelectedRepositoryMode()
+        {
+            return (int)DataSlider.Value;
+        }
     }
 }

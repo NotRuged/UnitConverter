@@ -1,57 +1,124 @@
 ﻿using MVVM_Einheitenumrechner.Class;
+using MVVM_Einheitenumrechner.Data;
+using MVVM_Einheitenumrechner.NewFolder;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace MVVM_Einheitenumrechner.ViewModel
 {
+    /**
+     * \brief ViewModel zur Verwaltung und Darstellung der Umrechnungshistorie.
+     * 
+     * Diese Klasse stellt eine observable Liste von \c HistoryEntry -Objekten bereit und lädt Daten
+     * entweder aus der Datenbank oder aus einer JSON-Datei – abhängig vom gewählten Modus (Slider).
+     */
     public class HistoryViewModel : INotifyPropertyChanged
     {
-       // private string connectionString = @"Data Source=DESKTOP-OIR8S4A\SQLEXPRESS;Trusted_Connection=yes;Database=UnitCalculator;Connection Timeout=10;";
-        private string connectionString = @"Data Source=DESKTOP-L6EO2E6\MSSQLSERVER01;Trusted_Connection=yes;Database=UnitConverter;Connection Timeout=10;";
+        /**
+         * \brief Repository für den JSON-Datenzugriff.
+         * 
+         * Dient dem Laden der Historie aus einer lokalen JSON-Datei.
+         */
+        private readonly FileJSONRepository _history = new FileJSONRepository("History");
 
+        /**
+         * \brief Liste der geladenen Historieneinträge.
+         * 
+         * Wird zur Datenbindung im View verwendet.
+         */
         public ObservableCollection<HistoryEntry> HistoryEntries { get; set; } = new();
 
+        /**
+         * \brief Konstruktor, prüft den Slider-Modus und lädt entsprechende Daten.
+         */
         public HistoryViewModel()
         {
-            LoadHistory();
+            CheckSlider();
         }
 
+        /**
+         * \brief Entscheidet anhand des Sliderwerts, ob die Datenbank oder die JSON-Datei verwendet wird.
+         */
+        private void CheckSlider()
+        {
+            int slidevalue = MainWindow.CheckSlideMode;
+
+            if (slidevalue == 0)
+            {
+                LoadHistory();
+            }
+            else
+            {
+                LoadHistoryJSon();
+            }
+        }
+
+        /**
+         * \brief Lädt die Umrechnungshistorie aus der Datenbank.
+         */
         public void LoadHistory()
         {
             HistoryEntries.Clear();
 
-            using var connection = new SqlConnection(connectionString);
-            string query = @"
-        SELECT ch.ConversionID, ch.Timestamp, ch.CategoryID, c.CategoryName, ch.FromUnit, ch.ToUnit, ch.InputValue, ch.ResultValue
-        FROM ConversionHistory ch
-        JOIN Categories c ON ch.CategoryID = c.CategoryID
-        ORDER BY ch.Timestamp DESC";
+            using var context = new UnitCalculatorContext();
 
-            connection.Open();
-            var command = new SqlCommand(query, connection);
-            var reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                HistoryEntries.Add(new HistoryEntry
+            var history = context.HistoryEntries
+                .OrderByDescending(ch => ch.Timestamp)
+                .Select(ch => new HistoryEntry
                 {
-                    ConversionID = (int)reader["ConversionID"],
-                    Timestamp = (DateTime)reader["Timestamp"],
-                    CategoryID = (int)reader["CategoryID"],
-                    CategoryName = reader["CategoryName"].ToString(),  // hinzufügen
-                    FromUnit = reader["FromUnit"].ToString(),
-                    ToUnit = reader["ToUnit"].ToString(),
-                    InputValue = (double)reader["InputValue"],
-                    ResultValue = reader["ResultValue"].ToString(),
-                });
+                    ConversionID = ch.ConversionID,
+                    Timestamp = ch.Timestamp,
+                    CategoryID = ch.CategoryID,
+                    CategoryName = ch.CategoryName,
+                    FromUnit = ch.FromUnit,
+                    ToUnit = ch.ToUnit,
+                    InputValue = ch.InputValue,
+                    ResultValue = ch.ResultValue
+                }).ToList();
 
+            foreach (var item in history)
+            {
+                HistoryEntries.Add(item);
             }
         }
 
+        /**
+         * \brief Lädt die Umrechnungshistorie aus der JSON-Datei.
+         * 
+         * Zeigt eine Fehlermeldung an, falls das Laden fehlschlägt.
+         */
+        public void LoadHistoryJSon()
+        {
+            HistoryEntries.Clear();
+
+            try
+            {
+                var historyList = _history.Load<HistoryEntry>();
+                foreach (var entry in historyList)
+                {
+                    HistoryEntries.Add(entry);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fehler beim Laden der History aus JSON:\n{ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /**
+         * \brief Event zur Benachrichtigung bei Property-Änderungen (für Datenbindung).
+         */
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /**
+         * \brief Löst das PropertyChanged-Event aus.
+         * 
+         * \param name Der Name der geänderten Eigenschaft.
+         */
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }

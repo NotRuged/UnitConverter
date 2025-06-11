@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['save_3c_20t_20_3e_0',['Save&lt; T &gt;',['../class_m_v_v_m___einheitenumrechner_1_1_data_1_1_file_j_s_o_n_repository.html#ac90beb74b0b1d78cef81c2a17ad1b9e2',1,'MVVM_Einheitenumrechner::Data::FileJSONRepository']]],
+  ['savecommand_1',['SaveCommand',['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_setting_view_model.html#afbc62dce67916e4d32c31f66a6b2974e',1,'MVVM_Einheitenumrechner::ViewModel::SettingViewModel']]],
+  ['selectedcategory_2',['SelectedCategory',['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_unit_view_model.html#af9e6c13c0795b1e885163730d726fbc4',1,'MVVM_Einheitenumrechner::ViewModel::UnitViewModel']]],
+  ['setpropertyvalue_3',['SetPropertyValue',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)'],['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)']]],
+  ['setrepositorymode_4',['SetRepositoryMode',['../class_m_v_v_m___einheitenumrechner_1_1_app.html#aa3653ea11a232fec9ebac251a14c4f35',1,'MVVM_Einheitenumrechner::App']]],
+  ['settingsview_5',['SettingsView',['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_settings_view.html',1,'MVVM_Einheitenumrechner::Views']]],
+  ['settingview_6',['SettingView',['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_setting_view.html',1,'MVVM_Einheitenumrechner.Views.SettingView'],['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_setting_view.html#a3f9dc75cba8d68cb8ef2511552ae07db',1,'MVVM_Einheitenumrechner.Views.SettingView.SettingView()']]],
+  ['settingviewmodel_7',['SettingViewModel',['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_setting_view_model.html',1,'MVVM_Einheitenumrechner.ViewModel.SettingViewModel'],['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_setting_view_model.html#a84b530e5ed8c49ca5d58510b0a864fe6',1,'MVVM_Einheitenumrechner.ViewModel.SettingViewModel.SettingViewModel()']]],
+  ['showpage_8',['ShowPage',['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_show_page.html',1,'MVVM_Einheitenumrechner::Views']]]
+];

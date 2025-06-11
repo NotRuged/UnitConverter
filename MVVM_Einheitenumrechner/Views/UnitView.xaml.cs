@@ -1,42 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MVVM_Einheitenumrechner.Views
 {
     /// <summary>
     /// Interaktionslogik für TestView.xaml
     /// </summary>
-    public partial class TestView : Window
+    public partial class TestView : UserControl
     {
+        /// <summary>
+        /// Initialisiert eine neue Instanz der <see cref="TestView"/>-Klasse.
+        /// </summary>
         public TestView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event-Handler für den Klick auf den Button "ShowHistory".
+        /// Navigiert zur HistoryView im Hauptfenster.
+        /// </summary>
+        /// <param name="sender">Der Button, der das Event ausgelöst hat.</param>
+        /// <param name="e">Event-Argumente.</param>
         private void ShowHistory_Click(object sender, RoutedEventArgs e)
         {
-            var historyWindow = new HistoryView();
-            historyWindow.Show();
-            this.Close();
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.ShowHistoryView();
         }
 
+        /// <summary>
+        /// Event-Handler für den Klick auf den "Edit" Button.
+        /// Navigiert zur SettingsView im Hauptfenster.
+        /// </summary>
+        /// <param name="sender">Der Button, der das Event ausgelöst hat.</param>
+        /// <param name="e">Event-Argumente.</param>
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            var settingsWindow = new SettingView();
-            settingsWindow.Show();
-            this.Close();
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.ShowSettingsView();
         }
-
     }
 }

@@ -1,0 +1,95 @@
+\doxysection{MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+History\+View\+Model Class Reference}
+\hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model}{}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model}\index{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}}
+
+
+\doxylink{namespace_m_v_v_m___einheitenumrechner_1_1_view_model}{View\+Model} zur Verwaltung und Darstellung der Umrechnungshistorie.  
+
+
+Inheritance diagram for MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+History\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a54e5cfca73e8e2d969f67bbcf83b09d9}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a54e5cfca73e8e2d969f67bbcf83b09d9} 
+{\bfseries History\+View\+Model} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor, prüft den Slider-\/\+Modus und lädt entsprechende Daten. \end{DoxyCompactList}\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a34710d9aabaa0eb2daf2cb8c106fb68c}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a34710d9aabaa0eb2daf2cb8c106fb68c} 
+void {\bfseries Load\+History} ()
+\begin{DoxyCompactList}\small\item\em Lädt die Umrechnungshistorie aus der Datenbank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_af9cc15279ece237ace6d40d691fa96ac}{Load\+History\+JSon}} ()
+\begin{DoxyCompactList}\small\item\em Lädt die Umrechnungshistorie aus der JSON-\/\+Datei. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a3babc40d878b5bec40cab35ec5b9d915}{On\+Property\+Changed}} (\mbox{[}Caller\+Member\+Name\mbox{]} string name=null)
+\begin{DoxyCompactList}\small\item\em Löst das Property\+Changed-\/\+Event aus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Observable\+Collection$<$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}{History\+Entry}} $>$ \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a50e1749f0416aeb280a31676fe5f99d1}{History\+Entries}} = new()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Liste der geladenen Historieneinträge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a9e2d43e898e0cb100c920e16fdf4bb5c}\label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a9e2d43e898e0cb100c920e16fdf4bb5c} 
+Property\+Changed\+Event\+Handler {\bfseries Property\+Changed}
+\begin{DoxyCompactList}\small\item\em Event zur Benachrichtigung bei Property-\/Änderungen (für Datenbindung). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_m_v_v_m___einheitenumrechner_1_1_view_model}{View\+Model} zur Verwaltung und Darstellung der Umrechnungshistorie. 
+
+Diese Klasse stellt eine observable Liste von {\ttfamily \doxylink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}{History\+Entry}} -\/Objekten bereit und lädt Daten entweder aus der Datenbank oder aus einer JSON-\/\+Datei – abhängig vom gewählten Modus (Slider). 
+
+\label{doc-func-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_af9cc15279ece237ace6d40d691fa96ac}\index{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}!LoadHistoryJSon@{LoadHistoryJSon}}
+\index{LoadHistoryJSon@{LoadHistoryJSon}!MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}}
+\doxysubsubsection{\texorpdfstring{LoadHistoryJSon()}{LoadHistoryJSon()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_af9cc15279ece237ace6d40d691fa96ac} 
+void MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+History\+View\+Model.\+Load\+History\+JSon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lädt die Umrechnungshistorie aus der JSON-\/\+Datei. 
+
+Zeigt eine Fehlermeldung an, falls das Laden fehlschlägt. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a3babc40d878b5bec40cab35ec5b9d915}\index{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}!OnPropertyChanged@{OnPropertyChanged}}
+\index{OnPropertyChanged@{OnPropertyChanged}!MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}}
+\doxysubsubsection{\texorpdfstring{OnPropertyChanged()}{OnPropertyChanged()}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a3babc40d878b5bec40cab35ec5b9d915} 
+virtual void MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+History\+View\+Model.\+On\+Property\+Changed (\begin{DoxyParamCaption}\item[{\mbox{[}\+Caller\+Member\+Name\mbox{]} string}]{name}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Löst das Property\+Changed-\/\+Event aus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Der Name der geänderten Eigenschaft. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-property-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a50e1749f0416aeb280a31676fe5f99d1}\index{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}!HistoryEntries@{HistoryEntries}}
+\index{HistoryEntries@{HistoryEntries}!MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel@{MVVM\_Einheitenumrechner.ViewModel.HistoryViewModel}}
+\doxysubsubsection{\texorpdfstring{HistoryEntries}{HistoryEntries}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model_a50e1749f0416aeb280a31676fe5f99d1} 
+Observable\+Collection$<$\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}{History\+Entry}}$>$ MVVM\+\_\+\+Einheitenumrechner.\+View\+Model.\+History\+View\+Model.\+History\+Entries = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Liste der geladenen Historieneinträge. 
+
+Wird zur Datenbindung im View verwendet. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MVVM\+\_\+\+Einheitenumrechner/\+View\+Model/History\+View\+Model.\+cs\end{DoxyCompactItemize}

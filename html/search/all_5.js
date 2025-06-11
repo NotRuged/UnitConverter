@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['historyentries_0',['HistoryEntries',['../class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category.html#ab2f28b04dc88deafaf6dfef8b0acb8a5',1,'MVVM_Einheitenumrechner.Class.Category.HistoryEntries'],['../class_m_v_v_m___einheitenumrechner_1_1_new_folder_1_1_unit_calculator_context.html#a5b731dfd57f3636cb57c656c0fc3a86e',1,'MVVM_Einheitenumrechner.NewFolder.UnitCalculatorContext.HistoryEntries'],['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model.html#a50e1749f0416aeb280a31676fe5f99d1',1,'MVVM_Einheitenumrechner.ViewModel.HistoryViewModel.HistoryEntries']]],
+  ['historyentry_1',['HistoryEntry',['../class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry.html',1,'MVVM_Einheitenumrechner::Class']]],
+  ['historyview_2',['HistoryView',['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_history_view.html',1,'MVVM_Einheitenumrechner.Views.HistoryView'],['../class_m_v_v_m___einheitenumrechner_1_1_views_1_1_history_view.html#a517b5a8dba656d40d5120ed4ef1a2d06',1,'MVVM_Einheitenumrechner.Views.HistoryView.HistoryView()']]],
+  ['historyviewmodel_3',['HistoryViewModel',['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model.html',1,'MVVM_Einheitenumrechner.ViewModel.HistoryViewModel'],['../class_m_v_v_m___einheitenumrechner_1_1_view_model_1_1_history_view_model.html#a54e5cfca73e8e2d969f67bbcf83b09d9',1,'MVVM_Einheitenumrechner.ViewModel.HistoryViewModel.HistoryViewModel()']]]
+];

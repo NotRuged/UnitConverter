@@ -1,20 +1,20 @@
-﻿<Window x:Class="MVVM_Einheitenumrechner.Views.TestView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MVVM_Einheitenumrechner.Views"
-        xmlns:vm="clr-namespace:MVVM_Einheitenumrechner.ViewModel"
-        mc:Ignorable="d"
-        Title="Einheitenumrechner" Height="550" Width="900"
-        Background="#FEF3E1" Padding="20">
+﻿<UserControl x:Class="MVVM_Einheitenumrechner.Views.TestView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MVVM_Einheitenumrechner.ViewModel"
+             mc:Ignorable="d"
+             MinHeight="600"
+             MinWidth="900"
+             Background="#FEF3E1"
+             Padding="20">
 
-
-    <Window.DataContext>
+    <UserControl.DataContext>
         <vm:UnitViewModel />
-    </Window.DataContext>
+    </UserControl.DataContext>
 
-    <Grid>
+    <Grid HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -22,13 +22,11 @@
 
         <!-- Kopfbereich mit Titel + Buttonleiste -->
         <StackPanel Grid.Row="0" Margin="0,0,0,20" HorizontalAlignment="Center">
-
-            <!-- Titel mit Farbverlauf -->
-            <TextBlock Text="Einheitenumrechner"
-                       FontSize="36"
+            <TextBlock FontSize="36"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
-                       Margin="0,0,0,5">
+                       Margin="0,0,0,5"
+                       ToolTip="Titel der Anwendung – Einheitenumrechner">
                 <TextBlock.Foreground>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#70C1B3" Offset="0.0" />
@@ -36,13 +34,14 @@
                         <GradientStop Color="#00838F" Offset="1.0" />
                     </LinearGradientBrush>
                 </TextBlock.Foreground>
+                Einheitenumrechner
             </TextBlock>
 
-            <!-- Linie unter dem Titel -->
             <Rectangle Height="5"
                        Width="300"
                        Margin="0,0,0,15"
-                       HorizontalAlignment="Center">
+                       HorizontalAlignment="Center"
+                       ToolTip="Dekoratives Farbverlaufselement unter dem Titel">
                 <Rectangle.Fill>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Color="#70C1B3" Offset="0.0" />
@@ -52,9 +51,10 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <!-- Zentriertes Buttonpanel -->
+            <!-- Buttons -->
             <WrapPanel HorizontalAlignment="Center" Margin="0,-10,0,0">
                 <Button Content="Verlauf"
+                        Click="ShowHistory_Click"
                         Width="120"
                         Height="40"
                         Margin="10"
@@ -63,7 +63,7 @@
                         Foreground="White"
                         Cursor="Hand"
                         BorderThickness="0"
-                        Click="ShowHistory_Click">
+                        ToolTip="Zeigt den Verlauf der Umrechnungen an">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#455A64"/>
@@ -89,6 +89,7 @@
                 </Button>
 
                 <Button Content="Settings"
+                        Click="EditButton_Click"
                         Width="120"
                         Height="40"
                         Margin="10"
@@ -97,7 +98,8 @@
                         Foreground="White"
                         Cursor="Hand"
                         BorderThickness="0"
-                        Click="EditButton_Click">
+                        Command="{Binding EditSettingsCommand}"
+                        ToolTip="Öffnet die Einstellungen">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#00796B"/>
@@ -127,16 +129,16 @@
         <!-- Inhalt -->
         <StackPanel Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="320">
 
-            <!-- Kategorie -->
             <TextBlock Text="Kategorie auswählen:"
                        FontWeight="SemiBold"
                        FontSize="14"
                        Foreground="#555555"
-                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"
+                       ToolTip="Wähle die Kategorie der Einheiten aus"/>
+
             <ComboBox ItemsSource="{Binding Categories}"
                       SelectedItem="{Binding SelectedCategory}"
                       DisplayMemberPath="CategoryName"
-                      ToolTip="Wähle eine Kategorie"
                       Width="320"
                       Height="38"
                       Margin="0,0,0,15"
@@ -145,22 +147,20 @@
                       BorderThickness="1"
                       FontSize="15"
                       Padding="6"
-                      VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#333333"/>
-                </ComboBox.Foreground>
-            </ComboBox>
+                      VerticalContentAlignment="Center"
+                      Foreground="#333"
+                      ToolTip="Liste der verfügbaren Kategorien"/>
 
-            <!-- Ursprungseinheit -->
             <TextBlock Text="Ursprungseinheit:"
                        FontWeight="SemiBold"
                        FontSize="14"
                        Foreground="#555555"
-                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"
+                       ToolTip="Wähle die Einheit, von der umgerechnet werden soll"/>
+
             <ComboBox ItemsSource="{Binding AvailableUnits}"
                       SelectedItem="{Binding FromUnit}"
                       DisplayMemberPath="Unit"
-                      ToolTip="Ursprungseinheit"
                       Width="320"
                       Height="38"
                       Margin="0,0,0,15"
@@ -169,44 +169,40 @@
                       BorderThickness="1"
                       FontSize="15"
                       Padding="6"
-                      VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#333333"/>
-                </ComboBox.Foreground>
-            </ComboBox>
+                      VerticalContentAlignment="Center"
+                      Foreground="#333"
+                      ToolTip="Liste der möglichen Ausgangseinheiten"/>
 
-            <!-- Zieleinheit -->
             <TextBlock Text="Zieleinheit:"
                        FontWeight="SemiBold"
                        FontSize="14"
                        Foreground="#555555"
-                       Margin="0,0,0,5"/>
+                       Margin="0,0,0,5"
+                       ToolTip="Wähle die Einheit, in die umgerechnet werden soll"/>
+
             <ComboBox ItemsSource="{Binding AvailableUnits}"
                       SelectedItem="{Binding ToUnit}"
                       DisplayMemberPath="Unit"
-                      ToolTip="Zieleinheit"
                       Width="320"
                       Height="38"
-                      Margin="0,0,0,25"
+                      Margin="0,0,0,20"
                       Background="White"
                       BorderBrush="#CCCCCC"
                       BorderThickness="1"
                       FontSize="15"
                       Padding="6"
-                      VerticalContentAlignment="Center">
-                <ComboBox.Foreground>
-                    <SolidColorBrush Color="#333333"/>
-                </ComboBox.Foreground>
-            </ComboBox>
+                      VerticalContentAlignment="Center"
+                      Foreground="#333"
+                      ToolTip="Liste der möglichen Zieleinheiten"/>
+
             <TextBlock Text="Zahl:"
-           FontWeight="SemiBold"
-           FontSize="14"
-           Foreground="#555555"
-           Margin="0,0,0,5"/>
+                       FontWeight="SemiBold"
+                       FontSize="14"
+                       Foreground="#555555"
+                       Margin="0,0,0,5"
+                       ToolTip="Gib die Zahl ein, die umgerechnet werden soll"/>
 
             <TextBox Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
-                     VerticalAlignment="Top"
-                     HorizontalAlignment="Center"
                      Width="320"
                      Height="38"
                      Margin="0,0,0,15"
@@ -220,8 +216,6 @@
                      ToolTip="Gib den Wert ein, der umgerechnet werden soll"/>
 
             <TextBox Text="{Binding Result, UpdateSourceTrigger=PropertyChanged}"
-                     VerticalAlignment="Top"
-                     HorizontalAlignment="Center"
                      Width="320"
                      Height="38"
                      Margin="0,0,0,15"
@@ -234,8 +228,6 @@
                      HorizontalContentAlignment="Center"
                      ToolTip="Ergebnis der Umrechnung"
                      IsReadOnly="True"/>
-
         </StackPanel>
-
     </Grid>
-</Window>
+</UserControl>

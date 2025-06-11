@@ -1,0 +1,121 @@
+\doxysection{MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry Class Reference}
+\hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}{}\label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+
+
+Repräsentiert einen Eintrag in der Umrechnungshistorie.  
+
+
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a2dde5043617c6eab093ad29397c9bd25}{Conversion\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Eindeutige ID der Umrechnung. \end{DoxyCompactList}\item 
+Date\+Time \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_aab99c4729f01b82967947ae2f02f4b4c}{Timestamp}} = Date\+Time.\+Now\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Zeitpunkt der Umrechnung. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad4c5e41ea659f150280e7d96f0d1d333}{Category\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Fremdschlüssel zur zugehörigen Kategorie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a9d057fba90df84d407673e6578891686}{Category\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Navigation zur Kategorie. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a4418ecfc061d3153ac6b87265feab6f5}{From\+Unit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ursprüngliche Einheit. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ab7985a8c30d952e71711062a203242e8}{To\+Unit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ziel-\/\+Einheit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad904ffe6e874333e1898001fc0ee1cde}{Input\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Eingabewert der Umrechnung. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a28f38091c58bf7170fcd04d4cfbb6f05}{Result\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ergebnis der Umrechnung. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Repräsentiert einen Eintrag in der Umrechnungshistorie. 
+
+Diese Klasse speichert Informationen über eine durchgeführte Umrechnung, einschließlich Eingabewert, Ergebnis, verwendete Einheiten und Zeitstempel. 
+
+\label{doc-property-members}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad4c5e41ea659f150280e7d96f0d1d333}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!CategoryID@{CategoryID}}
+\index{CategoryID@{CategoryID}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{CategoryID}{CategoryID}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad4c5e41ea659f150280e7d96f0d1d333} 
+int MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Category\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Fremdschlüssel zur zugehörigen Kategorie. 
+
+Verweist auf die Kategorie, zu der diese Umrechnung gehört. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a9d057fba90df84d407673e6578891686}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!CategoryName@{CategoryName}}
+\index{CategoryName@{CategoryName}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{CategoryName}{CategoryName}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a9d057fba90df84d407673e6578891686} 
+\mbox{\hyperlink{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_category}{Category}} MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Category\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Navigation zur Kategorie. 
+
+Objektverknüpfung zur zugehörigen Kategorieinstanz. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a2dde5043617c6eab093ad29397c9bd25}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!ConversionID@{ConversionID}}
+\index{ConversionID@{ConversionID}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{ConversionID}{ConversionID}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a2dde5043617c6eab093ad29397c9bd25} 
+int MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Conversion\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Eindeutige ID der Umrechnung. 
+
+Dient als Primärschlüssel zur Identifikation des Historieneintrags. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a4418ecfc061d3153ac6b87265feab6f5}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!FromUnit@{FromUnit}}
+\index{FromUnit@{FromUnit}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{FromUnit}{FromUnit}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a4418ecfc061d3153ac6b87265feab6f5} 
+string MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+From\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Ursprüngliche Einheit. 
+
+Die Einheit, aus der umgerechnet wurde. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad904ffe6e874333e1898001fc0ee1cde}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!InputValue@{InputValue}}
+\index{InputValue@{InputValue}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{InputValue}{InputValue}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ad904ffe6e874333e1898001fc0ee1cde} 
+double MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Input\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Eingabewert der Umrechnung. 
+
+Wert, der in der ursprünglichen Einheit angegeben wurde. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a28f38091c58bf7170fcd04d4cfbb6f05}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!ResultValue@{ResultValue}}
+\index{ResultValue@{ResultValue}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{ResultValue}{ResultValue}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_a28f38091c58bf7170fcd04d4cfbb6f05} 
+string MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Result\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Ergebnis der Umrechnung. 
+
+Der berechnete Wert in der Ziel-\/\+Einheit. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_aab99c4729f01b82967947ae2f02f4b4c}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{Timestamp}{Timestamp}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_aab99c4729f01b82967947ae2f02f4b4c} 
+Date\+Time MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+Timestamp = Date\+Time.\+Now\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Zeitpunkt der Umrechnung. 
+
+Gibt an, wann die Umrechnung durchgeführt wurde. Standardmäßig aktuelles Datum. \Hypertarget{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ab7985a8c30d952e71711062a203242e8}\index{MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}!ToUnit@{ToUnit}}
+\index{ToUnit@{ToUnit}!MVVM\_Einheitenumrechner.Class.HistoryEntry@{MVVM\_Einheitenumrechner.Class.HistoryEntry}}
+\doxysubsubsection{\texorpdfstring{ToUnit}{ToUnit}}
+{\footnotesize\ttfamily \label{class_m_v_v_m___einheitenumrechner_1_1_class_1_1_history_entry_ab7985a8c30d952e71711062a203242e8} 
+string MVVM\+\_\+\+Einheitenumrechner.\+Class.\+History\+Entry.\+To\+Unit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Ziel-\/\+Einheit. 
+
+Die Einheit, in die umgerechnet wurde. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MVVM\+\_\+\+Einheitenumrechner/\+Class/History\+Entry.\+cs\end{DoxyCompactItemize}

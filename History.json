@@ -1,0 +1,52 @@
+[
+  {
+    "ConversionID": 0,
+    "Timestamp": "2025-06-11T02:16:55.8820112+02:00",
+    "CategoryID": 2,
+    "CategoryName": null,
+    "FromUnit": "Kilogram",
+    "ToUnit": "Gram",
+    "InputValue": 984,
+    "ResultValue": "984000,00 Gram"
+  },
+  {
+    "ConversionID": 0,
+    "Timestamp": "2025-06-11T00:18:20.5983693+02:00",
+    "CategoryID": 2,
+    "CategoryName": null,
+    "FromUnit": "Kilogram",
+    "ToUnit": "Gram",
+    "InputValue": 12,
+    "ResultValue": "12000,00 Gram"
+  },
+  {
+    "ConversionID": 0,
+    "Timestamp": "2025-06-10T21:52:17.2923725+02:00",
+    "CategoryID": 3,
+    "CategoryName": null,
+    "FromUnit": "Celsius",
+    "ToUnit": "Kelvin",
+    "InputValue": 1,
+    "ResultValue": "1,00 Kelvin"
+  },
+  {
+    "ConversionID": 0,
+    "Timestamp": "2025-06-10T21:52:05.6551592+02:00",
+    "CategoryID": 1,
+    "CategoryName": null,
+    "FromUnit": "Meter",
+    "ToUnit": "Kilometer",
+    "InputValue": 14,
+    "ResultValue": "0,01 Kilometer"
+  },
+  {
+    "ConversionID": 0,
+    "Timestamp": "2025-06-10T16:33:32.5933345+02:00",
+    "CategoryID": 1,
+    "CategoryName": null,
+    "FromUnit": "Meter",
+    "ToUnit": "Kilometer",
+    "InputValue": 10,
+    "ResultValue": "0,01 Kilometer"
+  }
+]
