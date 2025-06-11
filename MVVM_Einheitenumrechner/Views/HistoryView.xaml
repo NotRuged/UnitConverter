@@ -35,7 +35,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Kopfbereich -->
         <Grid Grid.Row="0" Margin="0,0,0,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -43,7 +42,6 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Back-Button -->
             <Button Content="← Zurück"
                     Click="BackButton_Click"
                     ToolTip="Zurück zur Startseite"
@@ -55,7 +53,6 @@
                     BorderBrush="#B2DFDB"
                     Style="{StaticResource RoundedButtonStyle}" />
 
-            <!-- Titel -->
             <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="🔁 Verlauf"
                            FontSize="36"
@@ -85,7 +82,6 @@
                 </Rectangle>
             </StackPanel>
 
-            <!-- Optionales Icon -->
             <Image Grid.Column="2"
                    Source="/Images/StartPage.png"
                    Width="50"
@@ -95,7 +91,6 @@
                    ToolTip="Startseite öffnen"/>
         </Grid>
 
-        <!-- Verlaufstabelle -->
         <DataGrid Grid.Row="1"
                   Width="800"
                   MinHeight="300"

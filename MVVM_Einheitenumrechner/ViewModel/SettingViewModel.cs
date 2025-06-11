@@ -154,8 +154,7 @@ namespace MVVM_Einheitenumrechner.ViewModel
             }
             catch (Exception ex)
             {
-                MessageText = $"Fehler beim Speichern: {ex.Message}\n{ex.InnerException?.Message}\n{ex.StackTrace}";
-                MessageBox.Show($"Fehler beim Speichern:\n{ex.Message}\n{ex.InnerException?.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageText = $"Fehler beim Speichern: {ex.Message}";
                 MessageColor = Brushes.Red;
             }
         }
